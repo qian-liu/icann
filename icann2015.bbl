@@ -148,4 +148,20 @@ A.~N. Burkitt, ``A review of the integrate-and-fire neuron model: I.
 A.~J. Siegert, ``On the first passage time probability problem,'' {\em Physical
   Review}, vol.~81, no.~4, p.~617, 1951.
 
+\bibitem{video1}
+Q.~Liu, ``A gabor filter prefers the horizontal lines running on spinnaker in
+  real-time.''
+  \url{https://www.youtube.com/watch?v=PvJy6RKAJhw&feature=youtu.be&list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ},
+  Sept. 2014.
+
+\bibitem{video2}
+Q.~Liu, ``Feature extraction of live retinal input.''
+  \url{http://youtu.be/FZJshPCJ1pg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ},
+  Sept. 2014.
+
+\bibitem{video3}
+Q.~Liu, ``Live dynamic posture recognition on spinnaker.''
+  \url{http://youtu.be/yxN90aGGKvg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ},
+  Sept. 2014.
+
 \end{thebibliography}

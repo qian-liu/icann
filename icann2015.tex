@@ -16,7 +16,7 @@
 \pagestyle{empty}
 \begin{document}
 
-\title{Real-Time Hand Posture Recognition on a Neuromorphic System}
+\title{Real-Time Dynamic Hand Posture Recognition on a Neuromorphic System}
 \author{
 Qian~Liu, 
 and~Steve~Furber,~\IEEEmembership{Fellow,~IEEE}
@@ -85,14 +85,14 @@ The host communicates to the SpiNNaker board via Ethernet to set up its runtime 
 
 \begin{figure}
 \centering
-	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth]{pics/outline.jpg}
+	\begin{subfigure}[t]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{pics/outline.pdf}
 	    \caption{Outline of the platform}
 	    \label{fig:SysOverViewa}
 	\end{subfigure}
 	\\
-	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth]{pics/outline1.jpg}	    \caption{Picture of the hardware platform}
+	\begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{pics/outline2.pdf}	    \caption{Picture of the hardware platform}
 	    \label{fig:SysOverViewb}
 	\end{subfigure}	
 
@@ -107,8 +107,7 @@ The host sets up the runtime parameters off-line and downloads the network model
 \subsection{Silicon Retina}
 %\textcolor{blue}{
 \textcolor{black}{
-The visual front-end is constituted by a Dynamic Video Sensor (DVS) silicon retina, an asynchronous sensor which provides spike events encod-
-ing the address of pixels undergoing a contrast change\cite{wei2006robust}. 
+The visual front-end is constituted by a Dynamic Video Sensor (DVS) silicon retina, an asynchronous sensor which provides spike events encoding the address of pixels undergoing a contrast change\cite{wei2006robust}. 
 This approach lies in opposition to the more traditional method of sending entire frames to provide fast (3 $\mu$s latency) data-driven contrast detection at a wide range of illuminations. 
 The sensor is capable of transmitting from 1 Keps to 20 Meps (events per
 second).}
@@ -148,7 +147,7 @@ this will require suitable configuration of the on-board FPGAs that provide the 
 
 \begin{figure}
 \centering
-	\includegraphics[width=0.42\textwidth]{pics/48node_pcb_resolution-white.pdf}
+	\includegraphics[width=0.42\textwidth]{pics/SpiNN5.pdf}
 	\caption{103 Machine PCB}
 	\label{fig:48node}
 \end{figure}
@@ -166,8 +165,8 @@ Figure~\ref{fig:conv} shows a typical convolutional connection between two layer
 
 \begin{figure}
 \centering
-	\includegraphics[width=0.42\textwidth]{pics/convolution.png}
-	\caption{Each individual convolution neuron connects to its respective field using the same kernel.}
+	\includegraphics[width=0.42\textwidth]{pics/conv.pdf}
+	\caption{Each individual neuron in the convolution layer (right matrix) connects to its receptive field using the same kernel. The value of the kernel can be seen as the synaptic weights between the connected neurons.}
 	\label{fig:conv}
 \end{figure}
 
@@ -179,7 +178,7 @@ A straight forward method of template matching was employed at first, and then a
 
 \begin{figure}
 \centering
-	\includegraphics[width=0.42\textwidth]{pics/model1.pdf}
+	\includegraphics[width=0.50\textwidth]{pics/model1.pdf}
 	\caption{The convolutional neural network model with manually selected templates.}
 	\label{fig:model1}
 \end{figure}
@@ -197,10 +196,10 @@ Only the real parts of the Gabor filters (see Figure~\ref{fig:gabor}) are used a
 
 \begin{equation}
 \begin{array}{l}
-\mathit{Real Parts} = \exp \left(\frac{-x^{'2}+y^{'2}}{2\sigma ^{2}}\right)\cos \left(2\pi\frac{{x}'}{\lambda }\right)
+\mathrm{Real Parts} = \exp \left(\frac{-x^{'2}+y^{'2}}{2\sigma ^{2}}\right)\cos \left(2\pi\frac{{x}'}{\lambda }\right)
 \\
 \\
-\mathit{Imaginary Parts} = \exp \left(\frac{-x^{'2}+y^{'2}}{2\sigma ^{2}}\right)\sin \left(2\pi\frac{{x}'}{\lambda }\right)
+\mathrm{Imaginary Parts} = \exp \left(\frac{-x^{'2}+y^{'2}}{2\sigma ^{2}}\right)\sin \left(2\pi\frac{{x}'}{\lambda }\right)
 \\
 \\
 \mathrm{where:}
@@ -215,24 +214,24 @@ Only the real parts of the Gabor filters (see Figure~\ref{fig:gabor}) are used a
 \end{equation}
 
 
-\begin{figure*}
+\begin{figure}
 \centering
-	\includegraphics[width=0.95\textwidth]{pics/gabor.png}
+	\includegraphics[width=0.48\textwidth]{pics/gabor.pdf}
 	\caption{Real parts of the Gabor filters oriented to four directions.}
 	\label{fig:gabor}
-\end{figure*}
+\end{figure}
 
 The templates (see Figure~\ref{fig:template}) are manually selected from the output of the pooling layer in the framed Matlab simulation. 
 The output score of a convolution neuron is higher when its receptive field matches a certain template more. 
 There are five populations of template matching neurons for five postures in our system. 
 The activity of the template matching populations indicates naturally the position of the postures.
 
-\begin{figure*}
+\begin{figure}
 \centering
-	\includegraphics[width=0.95\textwidth]{pics/guesture.png}
+	\includegraphics[width=0.48\textwidth]{pics/gesture.pdf}
 	\caption{Themplates of the Five Postures.}
 	\label{fig:template}
-\end{figure*}
+\end{figure}
 
 \subsubsection{Combined Convolution Network}
 Inspired by the research of Lecun~\cite{lecun1998gradient} and etc., we designed a combined network model with MLP and the convolutional network (Figure~\ref{fig:model2}). 
@@ -241,7 +240,7 @@ A trained static 3-layered MLP is attached to classify the posture.
 
 \begin{figure}
 \centering
-	\includegraphics[width=0.42\textwidth]{pics/model2.pdf}
+	\includegraphics[width=0.52\textwidth]{pics/model2.pdf}
 	\caption{The combined convolutional model with trained MLP neurons.}
 	\label{fig:model2}
 \end{figure}
@@ -258,7 +257,7 @@ Training is missing here.
 In order to evaluate the cost and performance trade-offs in optimizing the number of neural components, both the convolutional models described above were tested at different sizes. 
 Five videos of every posture were captured from the silicon retina in address-event representation (AER~\cite{lazzaro1995multi}) format.  
 All the postures are of similar size and moving clock-wise in front of the retina. 
-The videos are cut into frames (30~$ms$ per frame) and push forward into the convolutional networks. 
+The videos are cut into frames (30~ms per frame) and push forward into the convolutional networks. 
 The configurations of the networks are listed in Table~\ref{tbl:nns} (Model 1: template matching; Model 2: trained MLP). 
 The integration layer is not necessary in a convolutional network, it is used here to fit the template matching and decrease the number of synaptic connections.
 
@@ -349,18 +348,18 @@ The integration layer is not necessary in a convolutional network, it is used he
 \subsection{Experiment Results}
 \label{sec:exp}
 
-\begin{figure*}
+\begin{figure}
 \centering
-	\includegraphics[width=0.9\textwidth]{pics/matlabrate1.pdf}
+	\includegraphics[width=0.48\textwidth]{pics/rateMatlab.pdf}
 	\caption{Neural responses with time to the same recorded postures.}
 	\label{fig:matlabrec}
-\end{figure*}
+\end{figure}
 
 
 
 
 In Figure~\ref{fig:matlabrec} the first two plots refer to Model 1, using template matching. Each colour represents one of the recognition populations. 
-Each point in the plot is the highest neuronal response in the recognition population during the time of one frame (30~$ms$). 
+Each point in the plot is the highest neuronal response in the recognition population during the time of one frame (30~ms). 
 The neuronal response, the spiking rate, is normalized to [-1, 1]. 
 It can be seen that the higher resolution input makes the boundaries between the classes clearer. 
 On the other hand, recognition only happens when the test image and template are similar enough. 
@@ -379,7 +378,7 @@ The smaller network uses only 1/10 the number of neurons and 1/50 the number of 
 
 \begin{table}
 \centering
-\caption{Recognition results}
+\caption{Recognition results in \%}
 	\begin{tabular}{p{0.075\textwidth}|p{0.05\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}}
 		%Line 1
 		\Xhline{1.2pt}
@@ -394,33 +393,33 @@ The smaller network uses only 1/10 the number of neurons and 1/50 the number of 
 			\\ \Xhline{1.2pt}
 		%Line 3-4	
 		\multirow{2}{*}{\tabincell{l}{\textbf{Fist}}}
-			& Correct & 99.11\%	& 99.23\%	& 96.24\%	& 84.21\%
+			& Correct & 99.11	& 99.23	& 96.24	& 84.21
 			\\ \cline{2-6}
-			& Reject  & 71.93\% & 67.42\% 	& Null	& Null
+			& Reject  & 71.93 & 67.42 	& Null	& Null
 			\\ \hline
 		%Line 5-6
-		\multirow{2}{*}{\tabincell{l}{\textbf{One Finger} \\ (392 Frames)}}
-			& Correct & 92.98\%	& 80.00\%	& 94.39\%	& 71.69\%
+		\multirow{2}{*}{\tabincell{l}{\textbf{Index Finger} \\ (392 Frames)}}
+			& Correct & 92.98	& 80.00	& 94.39	& 71.69
 			\\ \cline{2-6}
-			& Reject & 70.92\%	& 75.77\% 	& Null	& Null
+			& Reject & 70.92	& 75.77 	& Null	& Null
 			\\ \hline
 		%Line 7-8
 		\multirow{2}{*}{\tabincell{l}{\textbf{Victory Sign} \\ (551 Frames)}}
-			& Correct & 96.56\%	& 93.07\%	& 95.64\%	& 87.66\%
+			& Correct & 96.56	& 93.07	& 95.64	& 87.66
 			\\ \cline{2-6}
-			& Reject & 73.68\%	& 81.67\% 	& Null	& Null
+			& Reject & 73.68	& 81.67 	& Null	& Null
 			\\ \hline
 		%Line 9-10
 		\multirow{2}{*}{\tabincell{l}{\textbf{Full Hand} \\ (293 Frames)}}
-			& Correct & 95.65\%	& 72.41\%	& 93.52\%	& 72.01\%
+			& Correct & 95.65	& 72.41	& 93.52	& 72.01
 			\\ \cline{2-6}
-			& Reject & 92.15\%	& 90.10\% 	& Null	& Null
+			& Reject & 92.15	& 90.10 	& Null	& Null
 			\\ \hline
 		%Line 10-11
 		\multirow{2}{*}{\tabincell{l}{\textbf{Thumb up} \\ (391 Frames)}}
-			& Correct & 89.61\%	& 84.44\%	& 96.68\%	& 74.68\%
+			& Correct & 89.61	& 84.44	& 96.68	& 74.68
 			\\ \cline{2-6}
-			& Reject & 80.31\%	& 76.98\% 	& Null	& Null
+			& Reject & 80.31	& 76.98 	& Null	& Null
 			\\ \hline
 	\end{tabular}
 	\label{tbl:rsl}
@@ -436,7 +435,7 @@ There are attempts~\cite{la2008response}~\cite{burkitt2006review} to estimate th
 %For the retina layer, 1) the problem is: what is the connection weight between two single LIF neurons to make a post-synaptic neuron fire whenever the pre-synaptic neuron generates a spike? 
 %While for the convolutional neurons, 2) given the input spike rates, LIF neuron parameters and the output spiking rate, what are the corresponding weights between the two layers?
 \begin{equation}
-\frac{\D V(t)}{\D t}=-\frac{V(t)-V_\mathit{rest}}{\tau_m}+\frac{I(t)}{C_m}
+\frac{\D \: V(t)}{\D\:  t}=-\frac{V(t)-V_\mathit{rest}}{\tau_m}+\frac{I(t)}{C_m}
 \label{equ:lif}
 \end{equation}
 The membrane potential $V$ evolves with the input current $I$ starting from the resting membrane potential  $V_{rest}$, where the membrane time constant $\tau_m = R_mC_m$, and $R_m$ stands for the membrane resistance and $C_m$ the membrane capacitance.
@@ -452,7 +451,7 @@ The absolute refractory period $t_\mathit{ref}$ is included, for all the input d
 In a more realistic scenario, the post-synaptic potentials (PSPs) are triggered by the spikes generated from the neuron's pre-synaptic neurons other than a constant current.
 Assume that the synaptic inputs are Poisson spike trains, the membrane potential of the LIF neuron is concerned as a diffusion process. Equation~\ref{equ:lif} can be modelled as a stochastic differential equation referring to Ornstein-Uhlenbeck process,
 \begin{equation}
-\tau_m\frac{\D V(t)}{\D t}=-\left[V(t)-V_\mathit{rest}\right] + \mu + \sigma\sqrt{2\tau_m}\xi (t)
+\tau_m\frac{\D\:V(t)}{\D\:  t}=-\left[V(t)-V_\mathit{rest}\right] + \mu + \sigma\sqrt{2\tau_m}\xi (t)
 \label{equ:sde}
 \end{equation}
 where
@@ -476,7 +475,7 @@ The response function of the LIF neuron with Poisson input spike trains is given
 %\label{equ:sgt}
 %\end{equation}
 \begin{align}
-\lambda_\mathit{out} &=\left(\tau_\mathit{ref} + \frac{\tau_Q}{\sigma_Q}\sqrt{\frac{\pi}{2}} \int_{V_\mathit{rest}}^{V_\mathit{th}}\D u \:\exp \left(\frac{u-\mu_Q}{\sqrt2\sigma_Q} \right )^{2} \right. \nonumber \\
+\lambda_\mathit{out} &=\left(\tau_\mathit{ref} + \frac{\tau_Q}{\sigma_Q}\sqrt{\frac{\pi}{2}} \int_{V_\mathit{rest}}^{V_\mathit{th}}\D\,u \:\exp \left(\frac{u-\mu_Q}{\sqrt2\sigma_Q} \right )^{2} \right. \nonumber \\
 &\qquad \left. \vphantom{\int_t} \cdot  \left[1+\mathrm{erf} \left(\frac{u-\mu_Q}{\sqrt2\sigma_Q} \right ) \right ]\right)^{-1}
 \label{equ:sgt}
 \end{align}
@@ -496,26 +495,26 @@ each pooling layer is as big as 36$\times$36, convolving with five template kern
 thus, the recognition populations are 16$\times$16 neurons each. Altogether $74\,320$ neurons and $15\,216\,512$ synapses, see Table~\ref{tbl:m1} , use up to 19 chips (290 cores) on a 48-node board. Regarding the lower resolution of 32$\times$32 retinal input, see Table~\ref{tbl:m2}, the network consists of $5\,925$ neurons and $318\,420$ synapses taking up only two chips (31 cores) of the board.
 
 Figure~\ref{fig:live} shows snapshots of the real time gesture recognition system. 
-Figure~\ref{fig:live1} is a snapshot of the Gabor filter layer, where Figure~\ref{fig:live2} shows the integration of all the pooled populations, and the active neurons in the visualizer in Figure~\ref{fig:live3} are pointing out the position of the recognized pattern (One finger). 
-All the videos can be found on Youtube\footnote{\url{
-http://youtu.be/PvJy6RKAJhw?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ, http://youtu.be/FZJshPCJ1pg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ, http://youtu.be/yxN90aGGKvg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ}}.
+Figure~\ref{fig:live1} is a snapshot of the Gabor filter layer, where Figure~\ref{fig:live2} shows the integration of all the pooled populations, and the active neurons in the visualizer in Figure~\ref{fig:live3} are pointing out the position of the recognized pattern (Index finger). 
+All the videos can be found on Youtube~\cite{video1}~\cite{video2}~\cite{video3}. %\footnote{\url{
+%https://www.youtube.com/watch?v=PvJy6RKAJhw&feature=youtu.be&list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ, http://youtu.be/FZJshPCJ1pg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ, http://youtu.be/yxN90aGGKvg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ}}.
 
 \begin{figure}
 \centering
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{pics/live1.png}
-	    \caption{Neural responses of the Gabor filter layer orienting to the horizontal direction }
+	    \caption{Neural responses of the Gabor filter layer orienting to the horizontal direction~\cite{video1} }
 	    \label{fig:live1}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{pics/live2.png}
-		\caption{Neural responses of the integrate layer}
+		\caption{Neural responses of the integrate layer~\cite{video2}}
 	    \label{fig:live2}
 	\end{subfigure}
 	\\
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.48\textwidth}
 		\includegraphics[width=\textwidth]{pics/live.png}
-		\caption{Snapshot of the neuron responses of the template matching layer}
+		\caption{Snapshot of the neuron responses of the template matching layer~\cite{video3}}
 	    \label{fig:live3}
 	\end{subfigure}	
 
@@ -531,60 +530,25 @@ The recorded data is presented as Spike Source Array in the system with 128$\tim
 The output spikes generated from the recognition populations with time are shown in Figure~\ref{fig:rps} and \ref{fig:rps32} respectively for both the full resolution and the lower systems. 
 More spikes generated during the period when the preferred input gesture is shown. 
 
+
 \begin{figure}
 \centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth]{pics/figure_32_r.png}
-	    \caption{Retinal input population }
-	    \label{fig:ssa32}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth]{pics/figure_32_1.png}
-		\caption{Template matching population, 'Fist'}
-	    \label{fig:rec032}
-	\end{subfigure}
-	\\
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth]{pics/figure_32_2.png}
-		\caption{Template matching population, 'Single Finger'}
-	    \label{fig:rec132}
-	\end{subfigure}	
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth]{pics/figure_32_3.png}
-		\caption{Template matching population, 'Victory Sign'}
-	\end{subfigure}	
-	\\
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth]{pics/figure_32_4.png}
-		\caption{Template matching population, `Full Hand'}
-	    \label{fig:rec532}
-	\end{subfigure}	
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth]{pics/figure_32_5.png}
-		\caption{Template matching population, 'Thumb Up'}
-	    \label{fig:rect32}
-	\end{subfigure}	
-\caption{Spikes captured during the live recognition of the recorded retinal input with the resolution of 32$\times$32. }
-\label{fig:rps32}
-\end{figure}
-\begin{figure*}
-\centering
-	\includegraphics[width=0.9\textwidth]{pics/spinrates1.pdf}
+	\includegraphics[width=0.48\textwidth]{pics/rateSpiNN.pdf}
 	\caption{Real time neural responses on SpiNNaker with time to the same recorded postures.}
 	\label{fig:spikerec}
-\end{figure*}
+\end{figure}
 
 Correspondingly, the spiking rates of each recognition population is sampled into frames (Figure~\ref{fig:spikerec}) to make a comparison with the Matlab simulation. 
 Each colour represents one recognition population, and the spike activity goes higher when the input 
 gesture matches the template. 
-Firstly, the spike rates are sampled into 30~$ms$ frames which is in accordance with the Matlab experiments.
+Firstly, the spike rates are sampled into 30~ms frames which is in accordance with the Matlab experiments.
 In the Matlab simulation, the templates are trained with cut frames and so as the test images are also fixed to the same length frames.
 Otherwise, the recogniser will not work properly because of the replications of the moving posture.
 On the contrast, the spiking rates can be sampled to various lengths of frames.
-Thus, the other two plots in the figure illustrate the classification in a wider window, 300~$ms$.
+Thus, the other two plots in the figure illustrate the classification in a wider window, 300~ms.
 From Table~\ref{tbl:srr}, the recognition rates as well as the rejection rates are quantified in percentage.
 Regarding the latency between the retinal input and the recognition, we compared the spiking peak of the Matlab simulation and the real-time SpiNNaker test.
-The overall latency is about 1150~$ms$ from a posture is shown to its recognition. 
+The overall latency is about 1150~ms from a posture is shown to its recognition. 
 
 \begin{figure}
 \centering
@@ -595,42 +559,77 @@ The overall latency is about 1150~$ms$ from a posture is shown to its recognitio
 	\end{subfigure}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{pics/figure_1.png}
-		\caption{Template matching population, 'Fist'}
+		\caption{Template matching population, `Fist'}
 	    \label{fig:rec0}
 	\end{subfigure}
 	\\
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{pics/figure_2.png}
-		\caption{Template matching population, 'Single Finger'}
+		\caption{Template matching population, `Index Finger'}
 	    \label{fig:rec1}
 	\end{subfigure}	
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{pics/figure_3.png}
-		\caption{Template matching population, 'Victory Sign'}
+		\caption{Template matching population, `Victory Sign'}
 	\end{subfigure}	
 	\\
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{pics/figure_4.png}
-		\caption{Template matching population, 'Full Hand'}
+		\caption{Template matching population, `Full Hand'}
 	    \label{fig:rec5}
 	\end{subfigure}	
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth]{pics/figure_5.png}
-		\caption{Template matching population, 'Thumb Up'}
+		\caption{Template matching population, `Thumb Up'}
 	    \label{fig:rect}
 	\end{subfigure}	
 \caption{Spikes captured during the live recognition of the recorded retinal input with the resolution of 128$\times$128. }
 \label{fig:rps}
 \end{figure}
-
+\begin{figure}
+\centering
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth]{pics/figure_32_r.png}
+	    \caption{Retinal input population }
+	    \label{fig:ssa32}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth]{pics/figure_32_1.png}
+		\caption{Template matching population, `Fist'}
+	    \label{fig:rec032}
+	\end{subfigure}
+	\\
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth]{pics/figure_32_2.png}
+		\caption{Template matching population, `Index Finger'}
+	    \label{fig:rec132}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth]{pics/figure_32_3.png}
+		\caption{Template matching population, `Victory Sign'}
+	\end{subfigure}	
+	\\
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth]{pics/figure_32_4.png}
+		\caption{Template matching population, `Full Hand'}
+	    \label{fig:rec532}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth]{pics/figure_32_5.png}
+		\caption{Template matching population, `Thumb Up'}
+	    \label{fig:rect32}
+	\end{subfigure}	
+\caption{Spikes captured during the live recognition of the recorded retinal input with the resolution of 32$\times$32. }
+\label{fig:rps32}
+\end{figure}
 \begin{table}
 \centering
-\caption{Recognition results on SpiNNaker in real time}
+\caption{Real-time recognition results on SpiNNaker in \%}
 	\begin{tabular}{p{0.075\textwidth}|p{0.05\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}|p{0.055\textwidth}<{\centering}}
 		%Line 1
 		\Xhline{1.2pt}
-		    \multicolumn{2}{c|}{}	& \multicolumn{2}{c|}{\textbf{30~$ms$ per frame}}  
-		    & \multicolumn{2}{c}{\textbf{300~$ms$ per frame}}
+		    \multicolumn{2}{c|}{}	& \multicolumn{2}{c|}{\textbf{30~ms per frame}}  
+		    & \multicolumn{2}{c}{\textbf{300~ms per frame}}
 		    \\ \cline{3-6}
 		%Line 2
 		\multicolumn{2}{c|}{}	& \tabincell{c}{High \\ Resolution}
@@ -640,33 +639,33 @@ The overall latency is about 1150~$ms$ from a posture is shown to its recognitio
 			\\ \Xhline{1.2pt}
 		%Line 3-4	
 		\multirow{2}{*}{\tabincell{l}{\textbf{Fist}}}
-			& Correct & 91.78\%	& 78.02\%	& 100\%	& 92.31\%
+			& Correct & 91.78	& 78.02	& 100	& 92.31
 			\\ \cline{2-6}
-			& Reject  & 82.78\% & 78.54\% 	& 70.73\%	& 68.29\%
+			& Reject  & 82.78 & 78.54 	& 70.73	& 68.29
 			\\ \hline
 		%Line 5-6
-		\multirow{2}{*}{\tabincell{l}{\textbf{One Finger}}}
-			& Correct & 78.25\%	& 78.25\%	& 88.24\%	& 72.22\%
+		\multirow{2}{*}{\tabincell{l}{\textbf{Index Finger}}}
+			& Correct & 78.25	& 78.25	& 88.24	& 72.22
 			\\ \cline{2-6}
-			& Reject & 80.46\%	& 73.56\% 	& 57.50\%	& 55.00\%
+			& Reject & 80.46	& 73.56 	& 57.50	& 55.00
 			\\ \hline
 		%Line 7-8
 		\multirow{2}{*}{\tabincell{l}{\textbf{Victory Sign} }}
-			& Correct & 96.48\%	& 86.27\%	& 95.00\%	& 92.50\%
+			& Correct & 96.48	& 86.27	& 95.00	& 92.50
 			\\ \cline{2-6}
-			& Reject & 64.46\%	& 72.68\% 	& 28.57\%	& 28.57\%
+			& Reject & 64.46	& 72.68 	& 28.57	& 28.57
 			\\ \hline
 		%Line 9-10
 		\multirow{2}{*}{\tabincell{l}{\textbf{Full Hand}}}
-			& Correct & 85.29\%	& 60.78\%	& 90.00\%	& 75.00\%
+			& Correct & 85.29	& 60.78	& 90.00	& 75.00
 			\\ \cline{2-6}
-			& Reject & 67.31\%	& 83.65\% 	& 35.48\%	& 61.29\%
+			& Reject & 67.31	& 83.65 	& 35.48	& 61.29
 			\\ \hline
 		%Line 10-11
 		\multirow{2}{*}{\tabincell{l}{\textbf{Thumb up}}}
-			& Correct & 84.09\%	& 88.10\%	& 91.67\%	& 100\%
+			& Correct & 84.09	& 88.10	& 91.67	& 100
 			\\ \cline{2-6}
-			& Reject & 87.54\%	& 73.81\% 	& 66.67\%	& 66.67\%
+			& Reject & 87.54	& 73.81 	& 66.67	& 66.67
 			\\ \hline
 	\end{tabular}
 	\label{tbl:srr}
@@ -684,10 +683,21 @@ The authors would like to thank the meaningful discussions with Evangelos Stroma
 
 %\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
 %\end{biography}
-\begin{IEEEbiography}{Qian Liu}
-Biography text here.
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{pics/liuq.jpg}}]{Qian Liu}
+received the B.Sc. degree in
+software engineering from Beijing University of Technology, Beijing, China, in 2008.
+She started the Ph.D. Study in The University of Manchester in 2014 working on visual and auditory processing with spiking neurons on neuromorphic system.
 \end{IEEEbiography}
-\begin{IEEEbiography}{Steve Furber}
-Biography text here.
-\end{IEEEbiography}
+\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{pics/sf.jpg}}]{Steve Furber}
+
+(Fellow, IEEE) was born in Manchester, U.K., in 1953. 
+He received the B.A.degree in mathematics and the Ph.D. degree in aerodynamics from the University of Cambridge, Cambridge, U.K., in 1974 and 1980, respectively, and honorary doctorates from Edinburgh University, Edinburgh, U.K., in 2010 and Anglia Ruskin University, Cambridge, U.K., in 2012.
+
+From 1978 to 1981, he was Rolls Royce Research Fellow in Aerodynamics at Emmanuel College, Cambridge, U.K., and from 1981 to 1990, he was at Acorn Computers Ltd., Cambridge, U.K., where he was a principal architect of the BBC Microcomputer, which introduced computing into most U.K. schools, and the ARM 32-bit RISC microprocessor, over 40 billion of which have been shipped by ARM Ltd.’s partners.
+In 1990, he moved to the ICL Chair in Computer Engineering at the University of Manchester, Manchester, U.K., where his research interests include asynchronous
+digital design, low-power systems on chip, and neural systems engineering.
+
+Prof. Furber is a Fellow of the Royal Society, the Royal Academy of Engineering, the British Computer Society, the Institution of Engineering and Technology and the Computer History Museum (Mountain View, CA).
+He was a Millennium Technology Prize Laureate (2010) and holds an IEEE Computer Society Computer Pioneer Award (2013).
+\end{biography}
 \end{document}

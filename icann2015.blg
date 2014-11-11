@@ -3,37 +3,43 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: icann2015.aux
 The style file: ieeetr.bst
 Database file #1: refs.bib
+Warning--entry type for "video1" isn't style-file defined
+--line 274 of file refs.bib
+Warning--entry type for "video2" isn't style-file defined
+--line 283 of file refs.bib
+Warning--entry type for "video3" isn't style-file defined
+--line 292 of file refs.bib
 Warning--empty journal in furber2014spinnaker
-You've used 29 entries,
+You've used 32 entries,
             1876 wiz_defined-function locations,
-            666 strings with 9199 characters,
-and the built_in function-call counts, 9563 in all, are:
-= -- 996
-> -- 318
+            676 strings with 9639 characters,
+and the built_in function-call counts, 9944 in all, are:
+= -- 1029
+> -- 330
 < -- 0
-+ -- 118
-- -- 89
-* -- 684
-:= -- 1284
-add.period$ -- 29
-call.type$ -- 29
-change.case$ -- 29
++ -- 124
+- -- 92
+* -- 705
+:= -- 1338
+add.period$ -- 32
+call.type$ -- 32
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 501
-empty$ -- 885
-format.name$ -- 89
-if$ -- 2353
+cite$ -- 33
+duplicate$ -- 513
+empty$ -- 939
+format.name$ -- 92
+if$ -- 2449
 int.to.chr$ -- 0
-int.to.str$ -- 29
+int.to.str$ -- 32
 missing$ -- 29
-newline$ -- 90
-num.names$ -- 29
-pop$ -- 83
+newline$ -- 99
+num.names$ -- 32
+pop$ -- 101
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 381
+skip$ -- 393
 stack$ -- 0
 substring$ -- 812
 swap$ -- 236
@@ -42,7 +48,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 106
-width$ -- 31
-write$ -- 301
-(There was 1 warning)
+while$ -- 109
+width$ -- 34
+write$ -- 325
+(There were 4 warnings)
