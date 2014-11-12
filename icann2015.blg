@@ -9,37 +9,39 @@ Warning--entry type for "video2" isn't style-file defined
 --line 283 of file refs.bib
 Warning--entry type for "video3" isn't style-file defined
 --line 292 of file refs.bib
+Warning--entry type for "appnote8" isn't style-file defined
+--line 302 of file refs.bib
 Warning--empty journal in furber2014spinnaker
-You've used 32 entries,
+You've used 33 entries,
             1876 wiz_defined-function locations,
-            676 strings with 9639 characters,
-and the built_in function-call counts, 9944 in all, are:
-= -- 1029
-> -- 330
+            680 strings with 9801 characters,
+and the built_in function-call counts, 10071 in all, are:
+= -- 1040
+> -- 334
 < -- 0
-+ -- 124
-- -- 92
-* -- 705
-:= -- 1338
-add.period$ -- 32
-call.type$ -- 32
-change.case$ -- 32
++ -- 126
+- -- 93
+* -- 712
+:= -- 1356
+add.period$ -- 33
+call.type$ -- 33
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 513
-empty$ -- 939
-format.name$ -- 92
-if$ -- 2449
+cite$ -- 34
+duplicate$ -- 517
+empty$ -- 957
+format.name$ -- 93
+if$ -- 2481
 int.to.chr$ -- 0
-int.to.str$ -- 32
+int.to.str$ -- 33
 missing$ -- 29
-newline$ -- 99
-num.names$ -- 32
-pop$ -- 101
+newline$ -- 102
+num.names$ -- 33
+pop$ -- 107
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 393
+skip$ -- 397
 stack$ -- 0
 substring$ -- 812
 swap$ -- 236
@@ -48,7 +50,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 109
-width$ -- 34
-write$ -- 325
-(There were 4 warnings)
+while$ -- 110
+width$ -- 35
+write$ -- 333
+(There were 5 warnings)

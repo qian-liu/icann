@@ -1,5 +1,4 @@
 \documentclass[journal]{journal}
-%\usepackage[tight,footnotesize]{subfigure}
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{url}
@@ -16,13 +15,13 @@
 \pagestyle{empty}
 \begin{document}
 
-\title{Real-Time Dynamic Hand Posture Recognition on a Neuromorphic System}
+\title{Real-Time Recognition of Dynamic Hand Postures on a Neuromorphic System}
 \author{
 Qian~Liu, 
 and~Steve~Furber,~\IEEEmembership{Fellow,~IEEE}
 \thanks{
 The authors are with the School of Computer Science, University of Manchester, Manchester M13 9PL, U.K. 
-(e-mail:liuq@cs.man.ac.uk; steve.furber@manchester.ac.uk).}
+(e-mail:qian.liu-3@manchester.ac.uk; steve.furber@manchester.ac.uk).}
 }% <-this % stops a space
 %\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
 
@@ -31,10 +30,10 @@ The authors are with the School of Computer Science, University of Manchester, M
 
 \begin{abstract}
 %\boldmath
-In order to make an effective, energy-efficient touch-less user interface (UI), we modelled an optimized spiking neural network (SNN) based hand-gesture command identifier on bespoke hardware. 
-Goal 1:  prototype a neural gesture recognition system on SpiNNaker. 
-Once the gesture recognition system is functioning effectively the SpiNNaker platform can then be used to explore the optimal spiking neural network size and configuration for the gesture recognition task.
-Goal 2:  evaluate the cost and performance trade-offs in optimizing the number of neural components required to deliver effective gesture recognition.
+%In order to make an effective, energy-efficient touch-less user interface (UI), we modelled an optimized spiking neural network (SNN) based hand-gesture command identifier on bespoke hardware. 
+%Goal 1:  prototype a neural gesture recognition system on SpiNNaker. 
+%Once the gesture recognition system is functioning effectively the SpiNNaker platform can then be used to explore the optimal spiking neural network size and configuration for the gesture recognition task.
+%Goal 2:  evaluate the cost and performance trade-offs in optimizing the number of neural components required to deliver effective gesture recognition.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -42,18 +41,25 @@ spiking neural network (SNN), convolutional neural network (CNN), posture recogn
 \end{IEEEkeywords}
 
 \section{Introduction}
-\IEEEPARstart{A} pattern or an object in a two-dimensional image can be described with four properties~\cite{wysoski2008fast}: position, geometry (size, area and shape), color and texture, and trajectory. Appearance-based methods are the most direct approaches to perform pattern recognition. 
+\IEEEPARstart{A} pattern or an object in a two-dimensional image can be described with four properties~\cite{wysoski2008fast}: position, geometry (size, area and shape), colour and texture, and trajectory. 
+Appearance-based methods are the most direct approaches to perform pattern recognition. 
 The test image is compared with all the templates to find the best match on one particular or a combination of properties. 
-In terms of classification algorithms, distance measure methods (nearest neighbour, k-means clustering), support vector machine (SVM), multi-layer perceptron (MLP) neural networks and statistical methods, e.g. Gaussian mixture model (GMM) have been applied successfully in visual recognition. 
-Since the 2D projection of an object changes under various illuminations, viewing angles, relative positions and distances (size), it is impossible to represent all appearances of an object in different conditions. 
-Robust matching methods are employed, such as edge matching~\cite{canny1986computational}, the divide-and-conquer approach~\cite{toygar2004multiple}, gradient matching~\cite{wei2006robust}, etc. 
-Moreover, feature based methods are used to improve reliability, robustness and classification efficiency. 
-Among various feature extraction methods, the scale-invariant feature transform (SIFT)~\cite{lowe2004distinctive} and the sped-up robust features (SURF)~\cite{bay2008speeded} methods are well-accepted recently in the field. 
+%In terms of classification algorithms, distance measure methods (nearest neighbour, k-means clustering), support vector machine (SVM), multi-layer perceptron (MLP) neural networks and statistical methods, e.g. Gaussian mixture model (GMM) have been applied successfully in visual recognition. 
+However, the 2D projection of an object changes under various illuminations, viewing angles, relative positions and distances (sizes), so it is impossible to represent all appearances of an object in different conditions. 
+Robust matching, such as edge matching~\cite{canny1986computational}, the divide-and-conquer approach~\cite{toygar2004multiple}, gradient matching~\cite{wei2006robust}, etc., and feature based methods~\cite{lowe2004distinctive, bay2008speeded} are used to improve reliability, robustness and classification efficiency, 
+%Moreover, feature based methods are used to improve reliability, robustness and classification efficiency. 
+%Among various feature extraction methods, the scale-invariant feature transform (SIFT)~\cite{lowe2004distinctive} and the sped-up robust features (SURF)~\cite{bay2008speeded} methods are well-accepted recently in the field. 
 However, to find a proper feature for a specific object still remains an open question and there is not any process as accurate, general and effective as the brain.
-Turning to biology for answers is always the way to explore the field of visual pattern recognition. 
-Riesenhuber and Poggio~\cite{riesenhuber1999hierarchical} presented a biologically-inspired model following the organization of the visual cortex which has the ability to represent relative position- and scale-invariant features. Integrating a rich set of visual features became available using a feed-forward hierarchical pathway. 
+It is not a new idea to turn to nature for inspiration. 
+%Turning to biology for answers is always the way to explore the field of visual pattern recognition. 
+Riesenhuber and Poggio~\cite{riesenhuber1999hierarchical}, e.g., presented a biologically-inspired model following the organisation of the visual cortex which has the ability to represent relative position- and scale-invariant features. Integrating a rich set of visual features became available using a feed-forward hierarchical pathway. 
 
-More and more attention has been drawn into the investigation of spiking neural networks for vision processing. 
+The biologically-inspired Dynamic Video Sensor (DVS) silicon retina~\cite{lenero20113} with its event-driven and redundancy-reducing style of computation is a good example such an approach to low-cost visual processing. 
+With the DVS we take a step forward towards modelling the biological vision mechanisms of dynamic hand posture recognition on a neuromorphic system.
+SpiNNaker~\cite{furber2014spinnaker}, as the back-end of the system, provides a flexible, event-driven mechanism for real-time simulation of SNNs, and is where the posture recogniser locates.
+With their instinctive temporal processing, SNNs have the advantage to deliver dynamic hand posture recognition.
+
+Nowadays, more and more attention has been drawn into the investigation of SNNs for vision processing. 
 Pattern information can be encoded in the delays between the pre- and post-synaptic spikes since the spiking neurons are capable of computing radial basis functions (RBFs)~\cite{hopfield1995pattern}.  
 A further study~\cite{natschlager1998spatial} has stated that spatio-temporal information can be also stored in the exact firing time instead of the relative delay. Maass~\cite{maass1997networks} has proved mathematically that:
 1) networks of spiking neurons are computationally more powerful than the first and second generation of neural network models;
@@ -68,20 +74,21 @@ Rank order coding, as an alternative to conventional rate-based coding, treats t
 Nengo~\cite{eliasmith2011nengo} is a graphical and scripting based software package for simulating large-scale neural systems and has been used to build the world's largest functional brain model, Spaun~\cite{eliasmith2012large}. An FPGA implementation of a Nengo model for digit recognition has been reported~\cite{naylor2013managing}. 
 Deep Belief Networks (DBNs), the 4th generation of artificial neural network, has shown a strong ability in solving classification problems. 
 A recent study~\cite{o2013real} has resoundingly mapped an offline-trained DBN onto an efficient event-driven spiking neural network for a digit recognition task.
-Hand segmentation and feature extraction usually takes the colour into account and involves wavelets, e.g. using a Kalman filter. 
-Thus, shape-only recognition of the hand posture will be a challenge. 
-In the terms of gesture recognition, the hidden Markov model (HMM) has shown its ability to recognize dynamic gestures~\cite{elmezain2009hidden}. 
-However, with their instinctive temporal processing, SNNs have the potential to deliver dynamic gesture recognition.
 
-\section{Neuromorphic Platform}
-%\textcolor{blue}
-\textcolor{black}{
-This section presents some details of the two hardware components, the Address-Event Representation (AER) silicon retina~\cite{lenero20113} and the SpiNNaker system~\cite{furber2014spinnaker} which is a massive parallel computing platform aimed at real-time simulation of spiking neural networks (SNNs). 
-Figure~\ref{fig:SysOverView} shows the combined hand posture recognition system; 
-the AEREAR2 silicon retina connected to the SpiNNaker 48-node board via a Spartan 6 FPGA board~\cite{galluppi2012real}.%, which was also applied to a sound localisation system.
-The jAER~\cite{delbruck2008frame} event-based processing software\footnote{\url{http://sourceforge.net/p/jaer/wiki/Home/}} running on the PC configures the retina and displays the output spikes through a USB link.
+Section~\ref{sec:np} presents the details of the hardware of the neuromorphic system, including the silicon retina and the SpiNNaker machine.
+The neural network models are proposed and tested on Matlab, and the model structures and experiments results are stated in Section~\ref{sec:cnn}.
+In the following section, the rate-based models are converted to spiking neurons, and real-time live recognition as well as experiments with recorded data are carried out.
+The work is summarised and the future work is planned in Section~\ref{sec:cfw}.
+% which is a massive parallel computing platform aimed at real-time simulation of spiking neural networks (SNNs). 
+
+\section{The Neuromorphic Platform}
+\label{sec:np}
+The system outline of the platform is illustrated in Figure~\ref{fig:SysOverViewa}, where the hardware system is configured, controlled and monitored by the PC.
+%Figure~\ref{fig:SysOverViewb} shows the combined hand posture recognition system; 
+The jAER~\cite{delbruck2008frame} event-based processing software running on the PC configures the retina and displays the output spikes through a USB link.
 The host communicates to the SpiNNaker board via Ethernet to set up its runtime parameters and to download the neural network model off-line and uses a visualiser~\cite{6252490} to show the spiking activities in real-time.
-}
+From the picture of the hardware platform, Figure~\ref{fig:SysOverViewb}, the silicon retina connects to the SpiNNaker 48-node board via a Spartan-6 FPGA board~\cite{galluppi2012real}.%, which was also applied to a sound localisation system.
+
 
 \begin{figure}
 \centering
@@ -96,7 +103,8 @@ The host communicates to the SpiNNaker board via Ethernet to set up its runtime 
 	    \label{fig:SysOverViewb}
 	\end{subfigure}	
 
-\caption{System overview of the posture recognition platform. The silicon retina connects to the SpiNNaker system through an FPGA board. 
+\caption{System overview of the dynamipc hand posture recognition platform. 
+The silicon retina connects to the SpiNNaker system through an FPGA board. 
 Spikes from the retina are streamed to the SpiNNaker system through this Spartan-6 FPGA board.
 The jAER software configures the retina and displays its outgoing spikes through the USB connection.
 The host sets up the runtime parameters off-line and downloads the network model to the SpiNNaker system.
@@ -105,22 +113,22 @@ The host sets up the runtime parameters off-line and downloads the network model
 \end{figure}
 
 \subsection{Silicon Retina}
-%\textcolor{blue}{
-\textcolor{black}{
-The visual front-end is constituted by a Dynamic Video Sensor (DVS) silicon retina, an asynchronous sensor which provides spike events encoding the address of pixels undergoing a contrast change\cite{wei2006robust}. 
-This approach lies in opposition to the more traditional method of sending entire frames to provide fast (3 $\mu$s latency) data-driven contrast detection at a wide range of illuminations. 
-The sensor is capable of transmitting from 1 Keps to 20 Meps (events per
-second).}
+The visual input is captured by a DVS silicon retina, which is quite different from the conventional camera.
+A pixel only generates spikes to the connected neurons when its activity level reaches some threshold.
+Thus, instead of buffering video into frames, the activity of pixels is sent out and processed continually with time.
+So as the communication bandwidth is optimised by sending the activity only, which is encoded as events of address of pixels using address-event representation (AER~\cite{lazzaro1995multi}) protocol.
+The level of activity depends on the contrast change\cite{wei2006robust}; pixels generate spikes faster and more frequently when they are more active.
+The sensor is capable of capture very fast moving objects (up to 10 K rotations per second), which is equivalent to 100 K frames per second. 
 
 \subsection{SpiNNaker System}
 The SpiNNaker project's architecture mimics the human brain's biological structure and functionality. 
 This offers the possibility of utilizing massive parallelism and redundancy to provide resilience in an environment of unreliability and failure of individual components.
 
-In the human brain, communication between its computing elements, or neurons, is achieved by the transmission of electrical "spikes" along connecting axons. 
+In the human brain, communication between its computing elements, or neurons, is achieved by the transmission of electrical `spikes' along connecting axons. 
 The biological processing of the neuron can be modelled by a digital processor and the axon connectivity can be represented by messages, or information packets, transmitted between a large number of processors which emulate the parallel operation of the billions of neurons comprising the brain.
 
 The engineering of the SpiNNaker concept is illustrated in the Figure~\ref{fig:sysdia} where the hierarchy of components can be identified. 
-Each element of the toroidal interconnection mesh is a multi-core processor known as the "SpiNNaker Chip" comprising 18 processing cores. 
+Each element of the toroidal interconnection mesh is a multi-core processor known as the `SpiNNaker Chip' comprising 18 processing cores. 
 Each core is a complete processing sub-system with local memory and a DMA capability. 
 It is connected to its local peers via a Network-on-Chip (NoC) which provides local high bandwidth communication and to other SpiNNaker chips via links between SpiNNaker chips. 
 In this way the massive parallelism extending to thousands or millions of processors is possible.
@@ -128,7 +136,9 @@ In this way the massive parallelism extending to thousands or millions of proces
 \begin{figure}
 \centering
 	\includegraphics[width=0.42\textwidth]{pics/mesh_ctiff.jpg}
-	\caption{System diagram}
+	\caption{System diagram.
+	Each element represents one SpiNNaker chip with the local memory.
+	Every chip connects to the other through the six bi-directional on-board links. }
 	\label{fig:sysdia}
 \end{figure}
 
@@ -153,15 +163,16 @@ this will require suitable configuration of the on-board FPGAs that provide the 
 \end{figure}
 
 \subsection{Interfacing AER Sensors}
-Spikes from the silicon retina are injected to SpiNNaker through one of the 6 bi-directional on-board links by a SPARTAN-6 FPGA board that translates them into a SpiNNaker compatible AER format \footnote{AppNote 8 - Interfacing AER devices to SpiNNaker using an FPGA.}. 
+Spikes from the silicon retina are injected to SpiNNaker through one of the six bi-directional on-board links by a SPARTAN-6 FPGA board that translates them into a SpiNNaker compatible AER format~\cite{appnote8}. 
+
 From the software point of view, interfacing the silicon retina can be done using pyNN. 
-The user sets a Spike Source population that resides on a virtual SpiNNaker chip, to which an AER sensor's spikes are directed, thus abstracting away the hardware details from the users\cite{galluppi2012real}.
+The retina is configured as a spike source population that resides on a virtual SpiNNaker chip, to which an AER sensor's spikes are directed, thus abstracting away the hardware details from the users\cite{galluppi2012real}.
 
 \section{Convolutional Neural Networks}
 \label{sec:cnn}
 The convolutional neural network (CNN) is well-known as an example of a biologically-inspired model. 
-The repeated convolutional kernels are overlapped in the receptive fields of the input neurons. 
 Figure~\ref{fig:conv} shows a typical convolutional connection between two layers of neurons. 
+The repeated convolutional kernels are overlapped in the receptive fields of the input neurons. 
 
 \begin{figure}
 \centering
@@ -172,27 +183,35 @@ Figure~\ref{fig:conv} shows a typical convolutional connection between two layer
 
 \subsection{Model Description}
 \label{sec:mds}
-There are two CNNs proposed to accomplish the posture recognition task.
+There are two CNNs proposed to accomplish the dynamic hand posture recognition task.
 A straight forward method of template matching was employed at first, and then a multi-layer perceptrons (MLP) was trained to improve the recognition performance.
-\subsubsection{Manual Feature Extraction Model}
+\subsubsection{Model 1. Template Matching}
 
 \begin{figure}
 \centering
-	\includegraphics[width=0.50\textwidth]{pics/model1.pdf}
-	\caption{The convolutional neural network model with manually selected templates.}
+	\includegraphics[width=0.48\textwidth]{pics/model1.pdf}
+	\caption{Model 1. 
+	The retina input convolves with Gabor filters in the second layer, and then shrinks the sizes in the pooling layer.
+	The templates are considered as convolution kernels in the last layer.
+	The winner-take-all (WTA) circuit can be used as an option to show the template matching result more clearly.
+	}
 	\label{fig:model1}
 \end{figure}
 
-Shown in Figure~\ref{fig:model1} the first two layers are the input layer and the convolution layer, where the kernels are Gabor filters responding to four orientations. 
+Shown in Figure~\ref{fig:model1} the first layer is the retina input, followed by the convolutional layer, where the kernels are Gabor filters responding to four orientations.
 The third layer is the pooling layer where the size of the populations shrinks. 
 This down-sampling enables robust classification due to its tolerance to variations in the precise shape of the input. 
-The fourth layer is another convolution layer where the output from the pooling layer is convolved with the templates. 
-Each template is a “frame” (one frame consists of 30ms of spiking activity) of output spikes from the pooling layer.
-The Gabor filter is well-known as a linear filter for edge detection in image processing. 
-A Gabor filter is a 2D convolution of a Gaussian kernel function and a sinusoidal plane wave; see Equation~\ref{equ:gabor}. 
-$\theta$ represents the orientation of the filter, $\lambda$ is the wavelength of the sine wave, and $\sigma$ is the standard deviation of the Gaussian envelope. 
-The frequency and orientation features are similar to the responses of V1 neurons in the human visual system. 
-Only the real parts of the Gabor filters (see Figure~\ref{fig:gabor}) are used as the convolutional kernels to configure the weights between the input layer and the Gabor filter layer.
+The fourth layer is another convolution layer where the output from the pooling layer is convolved with the templates.
+The optional layer of WTA neurons enables a clearer classification result due to the inhibition between the neurons.
+As to the Matlab simulation, the retina input spikes are buffered with 30~ms frames, and all the neurons are simple linear perceptrons.
+The templates are manually selected from the output of the pooling layer, see Figure~\ref{fig:template}.
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.48\textwidth]{pics/gesture.pdf}
+	\caption{Templates of the five postures: `Fist',`Index Finger', `Victory Sign', `Full Hand' and `Thumb up'.}
+	\label{fig:template}
+\end{figure}
 
 \begin{equation}
 \begin{array}{l}
@@ -213,53 +232,53 @@ Only the real parts of the Gabor filters (see Figure~\ref{fig:gabor}) are used a
 \label{equ:gabor}
 \end{equation}
 
+The Gabor filter is well-known as a linear filter for edge detection in image processing. 
+A Gabor filter is a 2D convolution of a Gaussian kernel function and a sinusoidal plane wave; see Equation~\ref{equ:gabor}. 
+$\theta$ represents the orientation of the filter, $\lambda$ is the wavelength of the sine wave, and $\sigma$ is the standard deviation of the Gaussian envelope. 
+The frequency and orientation features are similar to the responses of V1 neurons in the human visual system. 
+Only the real parts of the Gabor filters (see Figure~\ref{fig:gabor}) are used as the convolutional kernels to configure the weights between the input layer and the Gabor filter layer.
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.48\textwidth]{pics/gabor.pdf}
-	\caption{Real parts of the Gabor filters oriented to four directions.}
+	\caption{Real parts of the Gabor filters orienting four directions.}
 	\label{fig:gabor}
 \end{figure}
 
-The templates (see Figure~\ref{fig:template}) are manually selected from the output of the pooling layer in the framed Matlab simulation. 
-The output score of a convolution neuron is higher when its receptive field matches a certain template more. 
-There are five populations of template matching neurons for five postures in our system. 
-The activity of the template matching populations indicates naturally the position of the postures.
+%The templates (see Figure~\ref{fig:template}) are manually selected from the output of the pooling layer in the framed Matlab simulation. 
+The output score of a convolution is determined by the matching degree between the input and the kernel.
+Regarding the template matching layer, one single neuron in a population responds to how closely its receptive field matches the specific template.
+And also, the position of moving gesture is naturally encoded in the address of template matching neuron.
+Thus, there are five populations of template matching neurons representing all the hand postures listed.
 
-\begin{figure}
-\centering
-	\includegraphics[width=0.48\textwidth]{pics/gesture.pdf}
-	\caption{Themplates of the Five Postures.}
-	\label{fig:template}
-\end{figure}
+\subsubsection{Model 2. Trained MLP}
+Inspired by the research of Lecun~\cite{lecun1998gradient} , we designed a combined network model with MLP and CNN (Figure~\ref{fig:model2}). 
+The first three layers are exactly the same with Model 1.
+Since the training images for the 3-layered MLP is of same size and the posture is centred in the images.
+Therefore, a tracking layer plays an important role to finds the most active region and forwards the centred image to the next layer. 
 
-\subsubsection{Combined Convolution Network}
-Inspired by the research of Lecun~\cite{lecun1998gradient} and etc., we designed a combined network model with MLP and the convolutional network (Figure~\ref{fig:model2}). 
-Thanks to the help of tracking, only the most active region in the pooling layer is forwarded to the next layer. 
-A trained static 3-layered MLP is attached to classify the posture.
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.52\textwidth]{pics/model2.pdf}
-	\caption{The combined convolutional model with trained MLP neurons.}
+	\caption{Model 2. 
+	The retina input convolves with Gabor filters in the second layer, and then shrinks the sizes in the pooling layer.
+	The following tracking layer finds the most active area of some fixed size, moves the posture to the centre and pushes the image to the trained MLP.
+	The winner-take-all (WTA) layer can be used as an option to show the template matching result more clearly.}
 	\label{fig:model2}
 \end{figure}
 
-Since the size of the input image of the MLP training is fixed and the position is centered, tracking plays a very important role to spot the valid region. 
-Tracking is naturally embedded in the pooling layer of the convolutional network, for the active neurons directly point out the lively receptive field. 
-%\textcolor{red}
-\textcolor{black}{However, to extract only the active region to the next layer is still need to investigate.}
+%Since the size of the input image of the MLP training is fixed and the position is centered, tracking plays a very important role to spot the valid region. 
+%Tracking is naturally embedded in the pooling layer of the convolutional network, for the active neurons directly point out the lively receptive field. 
 
-\subsection{Training and Testing}
+\subsection{Experiments Set-up}
 \label{sec:tat}
-Training is missing here.
-
 In order to evaluate the cost and performance trade-offs in optimizing the number of neural components, both the convolutional models described above were tested at different sizes. 
-Five videos of every posture were captured from the silicon retina in address-event representation (AER~\cite{lazzaro1995multi}) format.  
+Five videos of every posture were captured from the silicon retina in AER format.  
 All the postures are of similar size and moving clock-wise in front of the retina. 
 The videos are cut into frames (30~ms per frame) and push forward into the convolutional networks. 
 The configurations of the networks are listed in Table~\ref{tbl:nns} (Model 1: template matching; Model 2: trained MLP). 
-The integration layer is not necessary in a convolutional network, it is used here to fit the template matching and decrease the number of synaptic connections.
+The integration layer is not necessary in a convolutional network, it is used here to decrease the number of synaptic connections.
 
 \begin{table}
 \caption{Sizes of the convolutional neural networks.}
@@ -310,7 +329,7 @@ The integration layer is not necessary in a convolutional network, it is used he
 	\begin{subtable}{0.5\textwidth}
 		
 		\centering
-		\caption{Model 2: Trained MLP network layers after tracking}
+		\caption{Model 2: Trained MLP}
 		\begin{tabular}{p{0.13\textwidth}|p{0.15\textwidth}<{\centering}|p{0.13\textwidth}<{\centering}|p{0.13\textwidth}<{\centering}|p{0.13\textwidth}<{\centering}}
 		%Line 1
 		\Xhline{1.2pt}
@@ -351,7 +370,11 @@ The integration layer is not necessary in a convolutional network, it is used he
 \begin{figure}
 \centering
 	\includegraphics[width=0.48\textwidth]{pics/rateMatlab.pdf}
-	\caption{Neural responses with time to the same recorded postures.}
+	\caption{Neural responses with time of four experiments to the same recorded moving postures.
+	The recognition output is normalised to \mbox{[-1, 1]}.
+	Every point represents the highest response in a specific population (different colour) for a 30~ms frame.
+	The 1st plot refers to Model 1 with the full input resolution, and the 2nd plot Model 1 with the sub-sampled input resolution; and the 3rd and fourth plots both refer to Model 2, and with high and low input resolution respectively. 
+	}
 	\label{fig:matlabrec}
 \end{figure}
 
@@ -360,7 +383,7 @@ The integration layer is not necessary in a convolutional network, it is used he
 
 In Figure~\ref{fig:matlabrec} the first two plots refer to Model 1, using template matching. Each colour represents one of the recognition populations. 
 Each point in the plot is the highest neuronal response in the recognition population during the time of one frame (30~ms). 
-The neuronal response, the spiking rate, is normalized to [-1, 1]. 
+The neuronal response, `the spiking rate', is normalised to [-1, 1]. 
 It can be seen that the higher resolution input makes the boundaries between the classes clearer. 
 On the other hand, recognition only happens when the test image and template are similar enough. 
 The templates are only selected from the frames where the gestures are moving towards the right, and the gestures are moving clockwise in the videos. 
@@ -368,9 +391,11 @@ Thus, all the peaks in plot 1 signify that the direction of the gestures’ move
 It is notable that the higher resolution causes the recogniser to be more sensitive to the differences between the test data and the template, while the smaller neural network can recognize more generalized patterns. 
 Therefore, a threshold is required to differentiate between data that is close enough and that which is not. 
 Since the gestures are moving in four different directions during the clockwise movement, a rejection rate of 75\% is to be expected. 
+
 The latter two plots refer to Model 2. 
 The three-layer MLP network significantly improves the recognition rate and can generalize the pattern. 
-There is no rejection rate for Model 2. 
+There is no rejection rate for Model 2, since the MLP is trained with all the moving directions of the postures.
+
 The detailed results are listed in  Table~\ref{tbl:rsl}. 
 The correct recognition rate is calculated from the non-rejected frames.
 The lower resolution of the 32$\times$32 retina input is adequate for this gesture recognition task. 
@@ -427,7 +452,7 @@ The smaller network uses only 1/10 the number of neurons and 1/50 the number of 
 
 
 \section{Real-Time Recognition on SpiNNaker}
-
+\label{sec:rrs}
 \subsection{Moving from Rate-based Artificial Neurons to Spiking Neurons}
 It remains a challenge to transfer a traditional artificial neural networks into the spiking ones.
 There are attempts~\cite{la2008response}~\cite{burkitt2006review} to estimate the output firing rate of the Leaky integrate-and-fire (LIF) neurons (Equation~\ref{equ:lif}) under certain conditions. 
@@ -465,7 +490,7 @@ where
 \label{equ:ou}
 \end{equation}
 are the conditional mean and variance of the membrane potential.
-The delta-correlated process $\xi(t)$ is a Gaussian white noise with zero mean, $\mathbf{w_I},\mathbf{w_I}$ stand for the weight vectors of the excitatory and the inhibitory synapses, and $\mathbf{\lambda}$ represents the vector of the input firing rate.
+The delta-correlated process $\xi(t)$ is a Gaussian white noise with zero mean, $\mathbf{w_E} and \mathbf{w_I}$ stand for the weight vectors of the excitatory and the inhibitory synapses, and $\mathbf{\lambda}$ represents the vector of the input firing rate.
 The response function of the LIF neuron with Poisson input spike trains is given by Siegert function~\cite{siegert1951first}, 
 %\begin{equation}
 %%\lambda_\mathit{out}=\left(\tau_\mathit{ref} + \frac{\tau_Q}{\sigma_Q}\sqrt{\frac{\pi}{2}} \int_{V_\mathit{rest}}^{V_\mathit{th}}du \:\exp \left(\frac{u-\mu_Q}{\sqrt2\sigma_Q} \right )^{2}\left[1+erf \left(\frac{u-\mu_Q}{\sqrt2\sigma_Q} \right ) \right ]\right)^{-1}
@@ -488,15 +513,16 @@ Secondly, given the input spike rates of the pre-synaptic neurons, the parameter
 
 
 \subsection{Live Recognition}
-We implemented the prototype of the neural gesture recognition system on SpiNNaker. 
+We implemented the prototype of the dynamic posture recognition system on SpiNNaker with LIF neurons. 
 The input retina layer consists of 128$\times$128 neurons; 
 each Gabor filter has 112$\times$112 valid neurons, since the kernel size is 17$\times$17; 
 each pooling layer is as big as 36$\times$36, convolving with five template kernels (21$\times$21); 
 thus, the recognition populations are 16$\times$16 neurons each. Altogether $74\,320$ neurons and $15\,216\,512$ synapses, see Table~\ref{tbl:m1} , use up to 19 chips (290 cores) on a 48-node board. Regarding the lower resolution of 32$\times$32 retinal input, see Table~\ref{tbl:m2}, the network consists of $5\,925$ neurons and $318\,420$ synapses taking up only two chips (31 cores) of the board.
 
-Figure~\ref{fig:live} shows snapshots of the real time gesture recognition system. 
-Figure~\ref{fig:live1} is a snapshot of the Gabor filter layer, where Figure~\ref{fig:live2} shows the integration of all the pooled populations, and the active neurons in the visualizer in Figure~\ref{fig:live3} are pointing out the position of the recognized pattern (Index finger). 
-All the videos can be found on Youtube~\cite{video1}~\cite{video2}~\cite{video3}. %\footnote{\url{
+Figure~\ref{fig:live} shows snapshots of neural responses of some populations during real-time recognition.
+Figure~\ref{fig:live1} is a snapshot of the Gabor population which prefers the horizontal direction, given the input posture of a `Fist'; and Figure~\ref{fig:live2} shows the activity of the neurons in the integration layer, given a 'Victory Sign'.
+And the active neurons in the visualiser in Figure~\ref{fig:live3} are pointing out the position of the recognised pattern the `Index finger'. 
+All the videos can be found on Youtube~\cite{video1, video2, video3}. %\footnote{\url{
 %https://www.youtube.com/watch?v=PvJy6RKAJhw&feature=youtu.be&list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ, http://youtu.be/FZJshPCJ1pg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ, http://youtu.be/yxN90aGGKvg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ}}.
 
 \begin{figure}
@@ -518,7 +544,7 @@ All the videos can be found on Youtube~\cite{video1}~\cite{video2}~\cite{video3}
 	    \label{fig:live3}
 	\end{subfigure}	
 
-\caption{Snapshots of the real-time gesture recognition system on SpiNNaker.
+\caption{Snapshots of the real-time dynamic posture recognition system on SpiNNaker.
 }
 \label{fig:live}
 \end{figure}
@@ -528,19 +554,24 @@ To compare with the results of the experiments taken out in Section~\ref{sec:exp
 The recorded data is presented as Spike Source Array in the system with 128$\times$128 input, see Figure~\ref{fig:ssa}, while the data is forwarded to a sub-sampling layer of 32$\times$32 resolution 
 , see Figure~\ref{fig:ssa32}, in the system of the smaller network. 
 The output spikes generated from the recognition populations with time are shown in Figure~\ref{fig:rps} and \ref{fig:rps32} respectively for both the full resolution and the lower systems. 
-More spikes generated during the period when the preferred input gesture is shown. 
+More spikes generated during the period when the preferred input posture is shown. 
 
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.48\textwidth]{pics/rateSpiNN.pdf}
-	\caption{Real time neural responses on SpiNNaker with time to the same recorded postures.}
+	\caption{Real-time neural responses of two experiments on SpiNNaker with time to the same recorded postures.
+	These two experiments only differ on the input resolution.
+	The result of the high input resolution test is plotted the first with a sample frame of 30~ms; 
+	while the 3rd plot shows the same result with a sample frame of 300~ms.
+	The latter two plots refer to the smaller input resolution.
+	Every point represents the over all number of spikes of a specific population (different colour) in a `frame'.
+	}
 	\label{fig:spikerec}
 \end{figure}
 
 Correspondingly, the spiking rates of each recognition population is sampled into frames (Figure~\ref{fig:spikerec}) to make a comparison with the Matlab simulation. 
-Each colour represents one recognition population, and the spike activity goes higher when the input 
-gesture matches the template. 
+Each colour represents one recognition population, and the spike activity goes higher when the input posture matches the template. 
 Firstly, the spike rates are sampled into 30~ms frames which is in accordance with the Matlab experiments.
 In the Matlab simulation, the templates are trained with cut frames and so as the test images are also fixed to the same length frames.
 Otherwise, the recogniser will not work properly because of the replications of the moving posture.
@@ -672,9 +703,11 @@ The overall latency is about 1150~ms from a posture is shown to its recognition.
 \end{table}
 
 \section{Conclusion and Future Work}
+\label{sec:cfw}
 The future work will include more collaboration with biology and work with neuroscientist on vision systems, especially on the orientation detection region. 
-To equip the system with tracking is another important job where the recognition performance will be increased and the short-term memory of a gesture route can be stored. Using the idea of HMMs to spiking neural networks may be a good approach. 
+To equip the system with tracking is another important job where the recognition performance will be increased and the short-term memory of a gesture route can be stored. Using the idea of HMMs~\cite{elmezain2009hidden} to spiking neural networks may be a good approach. 
 \section{Acknowledgement}
+\label{sec:ack}
 This research was supported by Samsung under their GRO programme.
 The authors appreciate the collaboration with Prof. Bernab{\'e} Linares-Barranco and Luis Camunas-Mesa on the silicon retina.
 The authors would like to thank the meaningful discussions with Evangelos Stromatias, Patrick Camilleri and Michael Hopkins.

@@ -33,6 +33,16 @@ H.~Bay, A.~Ess, T.~Tuytelaars, and L.~Van~Gool, ``Speeded-up robust features
 M.~Riesenhuber and T.~Poggio, ``Hierarchical models of object recognition in
   cortex,'' {\em Nature neuroscience}, vol.~2, no.~11, pp.~1019--1025, 1999.
 
+\bibitem{lenero20113}
+J.~A. Le{\~n}ero-Bardallo, T.~Serrano-Gotarredona, and B.~Linares-Barranco, ``A
+  3.6 s latency asynchronous frame-free event-driven dynamic-vision-sensor,''
+  {\em Solid-State Circuits, IEEE Journal of}, vol.~46, no.~6, pp.~1443--1455,
+  2011.
+
+\bibitem{furber2014spinnaker}
+S.~B. Furber, F.~Galluppi, S.~Temple, and L.~A. Plana, ``The spinnaker
+  project,'' 2014.
+
 \bibitem{hopfield1995pattern}
 J.~J. Hopfield, ``Pattern recognition computation using action potential timing
   for stimulus representation,'' {\em Nature}, vol.~376, no.~6535, pp.~33--36,
@@ -92,28 +102,6 @@ P.~O'Connor, D.~Neil, S.-C. Liu, T.~Delbruck, and M.~Pfeiffer, ``Real-time
   classification and sensor fusion with a spiking deep belief network,'' {\em
   Frontiers in neuroscience}, vol.~7, 2013.
 
-\bibitem{elmezain2009hidden}
-M.~Elmezain, A.~Al-Hamadi, J.~Appenrodt, and B.~Michaelis, ``A hidden markov
-  model-based isolated and meaningful hand gesture recognition,'' {\em
-  International Journal of Electrical, Computer, and Systems Engineering},
-  vol.~3, no.~3, pp.~156--163, 2009.
-
-\bibitem{lenero20113}
-J.~A. Le{\~n}ero-Bardallo, T.~Serrano-Gotarredona, and B.~Linares-Barranco, ``A
-  3.6 s latency asynchronous frame-free event-driven dynamic-vision-sensor,''
-  {\em Solid-State Circuits, IEEE Journal of}, vol.~46, no.~6, pp.~1443--1455,
-  2011.
-
-\bibitem{furber2014spinnaker}
-S.~B. Furber, F.~Galluppi, S.~Temple, and L.~A. Plana, ``The spinnaker
-  project,'' 2014.
-
-\bibitem{galluppi2012real}
-F.~Galluppi, K.~Brohan, S.~Davidson, T.~Serrano-Gotarredona, J.-A.~P. Carrasco,
-  B.~Linares-Barranco, and S.~Furber, ``A real-time, event-driven neuromorphic
-  system for goal-directed attentional selection,'' in {\em Neural Information
-  Processing}, pp.~226--233, Springer, 2012.
-
 \bibitem{delbruck2008frame}
 T.~Delbruck, ``Frame-free dynamic digital vision,'' in {\em Proceedings of
   Intl. Symp. on Secure-Life Electronics, Advanced Electronics for Quality Life
@@ -124,15 +112,27 @@ C.~Patterson, F.~Galluppi, A.~Rast, and S.~Furber, ``Visualising large-scale
   neural network models in real-time,'' in {\em Neural Networks (IJCNN), The
   2012 International Joint Conference on}, pp.~1--8, 2012.
 
-\bibitem{lecun1998gradient}
-Y.~LeCun, L.~Bottou, Y.~Bengio, and P.~Haffner, ``Gradient-based learning
-  applied to document recognition,'' {\em Proceedings of the IEEE}, vol.~86,
-  no.~11, pp.~2278--2324, 1998.
+\bibitem{galluppi2012real}
+F.~Galluppi, K.~Brohan, S.~Davidson, T.~Serrano-Gotarredona, J.-A.~P. Carrasco,
+  B.~Linares-Barranco, and S.~Furber, ``A real-time, event-driven neuromorphic
+  system for goal-directed attentional selection,'' in {\em Neural Information
+  Processing}, pp.~226--233, Springer, 2012.
 
 \bibitem{lazzaro1995multi}
 J.~Lazzaro and J.~Wawrzynek, ``A multi-sender asynchronous extension to the aer
   protocol,'' in {\em Advanced Research in VLSI, Conference on}, pp.~158--158,
   IEEE Computer Society, 1995.
+
+\bibitem{appnote8}
+L.~A. Plana, ``Appnote 8 - interfacing aer devices to spinnaker using an
+  fpga.''
+  \url{https://spinnaker.cs.man.ac.uk/tiki-download_wiki_attachment.php?attId=20},
+  4 2013.
+
+\bibitem{lecun1998gradient}
+Y.~LeCun, L.~Bottou, Y.~Bengio, and P.~Haffner, ``Gradient-based learning
+  applied to document recognition,'' {\em Proceedings of the IEEE}, vol.~86,
+  no.~11, pp.~2278--2324, 1998.
 
 \bibitem{la2008response}
 G.~La~Camera, M.~Giugliano, W.~Senn, and S.~Fusi, ``The response of cortical
@@ -163,5 +163,11 @@ Q.~Liu, ``Feature extraction of live retinal input.''
 Q.~Liu, ``Live dynamic posture recognition on spinnaker.''
   \url{http://youtu.be/yxN90aGGKvg?list=PLxZ1W-Upr3eoQuLxq87qpUL-CwSphtEBJ},
   Sept. 2014.
+
+\bibitem{elmezain2009hidden}
+M.~Elmezain, A.~Al-Hamadi, J.~Appenrodt, and B.~Michaelis, ``A hidden markov
+  model-based isolated and meaningful hand gesture recognition,'' {\em
+  International Journal of Electrical, Computer, and Systems Engineering},
+  vol.~3, no.~3, pp.~156--163, 2009.
 
 \end{thebibliography}
