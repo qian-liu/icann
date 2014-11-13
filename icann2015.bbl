@@ -64,7 +64,7 @@ A.~Gupta and L.~N. Long, ``Character recognition using spiking neural
 
 \bibitem{6467270}
 J.~H. Lee, P.~Park, C.-W. Shin, H.~Ryu, B.~C. Kang, and T.~Delbruck,
-  ``Touchless hand gesture ui with instantaneous responses,'' in {\em Image
+  ``{Touchless hand gesture UI with instantaneous responses},'' in {\em Image
   Processing (ICIP), 2012 19th IEEE International Conference on},
   pp.~1957--1960, Sept 2012.
 
@@ -128,6 +128,18 @@ L.~A. Plana, ``Appnote 8 - interfacing aer devices to spinnaker using an
   fpga.''
   \url{https://spinnaker.cs.man.ac.uk/tiki-download_wiki_attachment.php?attId=20},
   4 2013.
+
+\bibitem{5537164}
+S.-C. Liu, A.~van Schaik, B.~Minch, and T.~Delbruck, ``Event-based 64-channel
+  binaural silicon cochlea with q enhancement mechanisms,'' in {\em Circuits
+  and Systems (ISCAS), Proceedings of 2010 IEEE International Symposium on},
+  pp.~2027--2030, May 2010.
+
+\bibitem{6706931}
+Q.~Liu, C.~Patterson, S.~Furber, Z.~Huang, Y.~Hou, and H.~Zhang, ``Modeling
+  populations of spiking neurons for fine timing sound localization,'' in {\em
+  Neural Networks (IJCNN), The 2013 International Joint Conference on},
+  pp.~1--8, Aug 2013.
 
 \bibitem{lecun1998gradient}
 Y.~LeCun, L.~Bottou, Y.~Bengio, and P.~Haffner, ``Gradient-based learning

@@ -29,8 +29,14 @@ The authors are with the School of Computer Science, University of Manchester, M
 \thispagestyle{empty}
 
 \begin{abstract}
-%\boldmath
-%In order to make an effective, energy-efficient touch-less user interface (UI), we modelled an optimized spiking neural network (SNN) based hand-gesture command identifier on bespoke hardware. 
+In order to make an effective, energy-efficient touch-less user interface, this paper proposes a real-time recognition system of dynamic hand postures on a neuromorphic platform.
+The hardware system includes a front-end of a Dynamic Video Sensor~(DVS) silicon retina and a real-time Spiking Neural Network~(SNN) simulator, SpiNNaker, as the back-end.
+The neural network model is tested both on Matlab and SpiNNaker to validate the transformation from rate-based linear perceptrons to spiking Leaky integrate-and-fire (LIF) neurons.
+Live recognition with real-time retina input is also carried out to test both the hardware platform and the model.
+Moreover, different network sizes are configured to evaluate the cost and performance trade-off.
+
+%Computation with spiking neurons takes advantage of the abstraction of action potentials into streams of stereotypical events, which encode information through their timing. 
+%This approach both reduces power consumption and alleviates communication bottlenecks.
 %Goal 1:  prototype a neural gesture recognition system on SpiNNaker. 
 %Once the gesture recognition system is functioning effectively the SpiNNaker platform can then be used to explore the optimal spiking neural network size and configuration for the gesture recognition task.
 %Goal 2:  evaluate the cost and performance trade-offs in optimizing the number of neural components required to deliver effective gesture recognition.
@@ -41,7 +47,7 @@ spiking neural network (SNN), convolutional neural network (CNN), posture recogn
 \end{IEEEkeywords}
 
 \section{Introduction}
-\IEEEPARstart{A} pattern or an object in a two-dimensional image can be described with four properties~\cite{wysoski2008fast}: position, geometry (size, area and shape), colour and texture, and trajectory. 
+\IEEEPARstart{P}{atterns} or objects in two-dimensional images can be described with four properties~\cite{wysoski2008fast}: position, geometry (size, area and shape), colour and texture, and trajectory. 
 Appearance-based methods are the most direct approaches to perform pattern recognition. 
 The test image is compared with all the templates to find the best match on one particular or a combination of properties. 
 %In terms of classification algorithms, distance measure methods (nearest neighbour, k-means clustering), support vector machine (SVM), multi-layer perceptron (MLP) neural networks and statistical methods, e.g. Gaussian mixture model (GMM) have been applied successfully in visual recognition. 
@@ -54,7 +60,7 @@ It is not a new idea to turn to nature for inspiration.
 %Turning to biology for answers is always the way to explore the field of visual pattern recognition. 
 Riesenhuber and Poggio~\cite{riesenhuber1999hierarchical}, e.g., presented a biologically-inspired model following the organisation of the visual cortex which has the ability to represent relative position- and scale-invariant features. Integrating a rich set of visual features became available using a feed-forward hierarchical pathway. 
 
-The biologically-inspired Dynamic Video Sensor (DVS) silicon retina~\cite{lenero20113} with its event-driven and redundancy-reducing style of computation is a good example such an approach to low-cost visual processing. 
+The biologically-inspired DVS silicon retina~\cite{lenero20113} with its event-driven and redundancy-reducing style of computation is a good example such an approach to low-cost visual processing. 
 With the DVS we take a step forward towards modelling the biological vision mechanisms of dynamic hand posture recognition on a neuromorphic system.
 SpiNNaker~\cite{furber2014spinnaker}, as the back-end of the system, provides a flexible, event-driven mechanism for real-time simulation of SNNs, and is where the posture recogniser locates.
 With their instinctive temporal processing, SNNs have the advantage to deliver dynamic hand posture recognition.
@@ -83,11 +89,12 @@ The work is summarised and the future work is planned in Section~\ref{sec:cfw}.
 
 \section{The Neuromorphic Platform}
 \label{sec:np}
-The system outline of the platform is illustrated in Figure~\ref{fig:SysOverViewa}, where the hardware system is configured, controlled and monitored by the PC.
+The outline of the platform is illustrated in Figure~\ref{fig:SysOverViewa}, where the hardware system is configured, controlled and monitored by the PC.
 %Figure~\ref{fig:SysOverViewb} shows the combined hand posture recognition system; 
-The jAER~\cite{delbruck2008frame} event-based processing software running on the PC configures the retina and displays the output spikes through a USB link.
+The jAER~\cite{delbruck2008frame} event-based processing software on the PC configures the retina and displays the output spikes through a USB link.
 The host communicates to the SpiNNaker board via Ethernet to set up its runtime parameters and to download the neural network model off-line and uses a visualiser~\cite{6252490} to show the spiking activities in real-time.
-From the picture of the hardware platform, Figure~\ref{fig:SysOverViewb}, the silicon retina connects to the SpiNNaker 48-node board via a Spartan-6 FPGA board~\cite{galluppi2012real}.%, which was also applied to a sound localisation system.
+From the picture of the hardware platform, Figure~\ref{fig:SysOverViewb}, the silicon retina connects to the SpiNNaker 48-node board via a Spartan-6 FPGA board~\cite{galluppi2012real}.
+%, which was also applied to a sound localisation system.
 
 
 \begin{figure}
@@ -167,6 +174,7 @@ Spikes from the silicon retina are injected to SpiNNaker through one of the six 
 
 From the software point of view, interfacing the silicon retina can be done using pyNN. 
 The retina is configured as a spike source population that resides on a virtual SpiNNaker chip, to which an AER sensor's spikes are directed, thus abstracting away the hardware details from the users\cite{galluppi2012real}.
+Besides the retina, we have successfully connected an AER based silicon cochlea~\cite{5537164} to SpiNNaker for the a sound localisation task~\cite{6706931}.
 
 \section{Convolutional Neural Networks}
 \label{sec:cnn}
@@ -417,7 +425,7 @@ The smaller network uses only 1/10 the number of neurons and 1/50 the number of 
 			& \tabincell{c}{Low \\ Resolution}
 			\\ \Xhline{1.2pt}
 		%Line 3-4	
-		\multirow{2}{*}{\tabincell{l}{\textbf{Fist}}}
+		\multirow{2}{*}{\tabincell{l}{\textbf{Fist}\\ (399 Frames)}}
 			& Correct & 99.11	& 99.23	& 96.24	& 84.21
 			\\ \cline{2-6}
 			& Reject  & 71.93 & 67.42 	& Null	& Null
@@ -446,6 +454,11 @@ The smaller network uses only 1/10 the number of neurons and 1/50 the number of 
 			\\ \cline{2-6}
 			& Reject & 80.31	& 76.98 	& Null	& Null
 			\\ \hline
+		\multirow{2}{*}{\tabincell{l}{\textbf{Average} \\ (391 Frames)}}
+			& Correct & 89.61	& 84.44	& 96.68	& 74.68
+			\\ \cline{2-6}
+			& Reject & 80.31	& 76.98 	& Null	& Null
+			\\ \hline
 	\end{tabular}
 	\label{tbl:rsl}
 \end{table}
@@ -455,7 +468,7 @@ The smaller network uses only 1/10 the number of neurons and 1/50 the number of 
 \label{sec:rrs}
 \subsection{Moving from Rate-based Artificial Neurons to Spiking Neurons}
 It remains a challenge to transfer a traditional artificial neural networks into the spiking ones.
-There are attempts~\cite{la2008response}~\cite{burkitt2006review} to estimate the output firing rate of the Leaky integrate-and-fire (LIF) neurons (Equation~\ref{equ:lif}) under certain conditions. 
+There are attempts~\cite{la2008response}~\cite{burkitt2006review} to estimate the output firing rate of the LIF neurons (Equation~\ref{equ:lif}) under certain conditions. 
 %For the model illustrated above, there are two types of synaptic connection: one-to-one connections in the retina layer and N-to-one connections in all the convolutional layers (the pooling layer is also included). 
 %For the retina layer, 1) the problem is: what is the connection weight between two single LIF neurons to make a post-synaptic neuron fire whenever the pre-synaptic neuron generates a spike? 
 %While for the convolutional neurons, 2) given the input spike rates, LIF neuron parameters and the output spiking rate, what are the corresponding weights between the two layers?
@@ -578,6 +591,12 @@ Otherwise, the recogniser will not work properly because of the replications of 
 On the contrast, the spiking rates can be sampled to various lengths of frames.
 Thus, the other two plots in the figure illustrate the classification in a wider window, 300~ms.
 From Table~\ref{tbl:srr}, the recognition rates as well as the rejection rates are quantified in percentage.
+
+Comparing with the result of Matlab simulation in Table~\ref{tbl:rsl}, the recognition rate of 30~ms windowing is about 10\% lower both in high and low resolution, but the rejection rate increases by around 10\%. 
+On the other hand with 300~ms windowing, both of recognition rate reach or exceed the Matlab simulation, meanwhile the rejection rate dropped dramatically about 20\% in average.
+It is in accordance with the natural visual responses, which means, the longer an object shows the more accurate the recognition will be.
+In terms of the performance, between the two network sizes there is a smaller gap of the recognition rate as the window length grows.
+The correct recognitions of three postures out of five are over 90\%, i.e., considering the cost and performance trade-off, with only 1/10 resources required the performance of the small network is acceptable.
 Regarding the latency between the retinal input and the recognition, we compared the spiking peak of the Matlab simulation and the real-time SpiNNaker test.
 The overall latency is about 1150~ms from a posture is shown to its recognition. 
 
@@ -704,6 +723,14 @@ The overall latency is about 1150~ms from a posture is shown to its recognition.
 
 \section{Conclusion and Future Work}
 \label{sec:cfw}
+In this paper, we implement a dynamic hand posture recognition system completely running on a hardware neuromorphic platform.
+The network model is translated from linear perceptrons to LIF spiking neurons with 10\% drop of accuracy in 30~ms windowing;
+while the performance reach and even exceed the Matlab version when the 
+window length is set to 300~ms.
+Different network sizes are configured to the cost and performance trade-off.
+In the test of Matlab simulation, the recognition rate of the smaller network is 10\% lower for the template matching model and 15\% lower for the trained MLP model.
+For the real-time experiments, both the bigger network of $74\,320$ LIF neurons and $15\,216\,512$ synapses and the smaller (1/10 of the neurons and 1/50 of the synapses) run smoothly on SpiNNaker with a overall delay of 1150~ms.
+
 The future work will include more collaboration with biology and work with neuroscientist on vision systems, especially on the orientation detection region. 
 To equip the system with tracking is another important job where the recognition performance will be increased and the short-term memory of a gesture route can be stored. Using the idea of HMMs~\cite{elmezain2009hidden} to spiking neural networks may be a good approach. 
 \section{Acknowledgement}

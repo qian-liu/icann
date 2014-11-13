@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.6)  12 NOV 2014 20:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.10.6)  13 NOV 2014 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,26 +370,29 @@ Underfull \hbox (badness 2269) in paragraph at lines 28--28
 c.uk;
  []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 <pics/outline.pdf, id=9, 186.6975pt x 95.35625pt>
 File: pics/outline.pdf Graphic file (type pdf)
  <use pics/outline.pdf>
-Package pdftex.def Info: pics/outline.pdf used on input line 96.
+Package pdftex.def Info: pics/outline.pdf used on input line 103.
 (pdftex.def)             Requested size: 206.39685pt x 105.4218pt.
 
 <pics/outline2.pdf, id=10, 1509.64pt x 601.24625pt>
 File: pics/outline2.pdf Graphic file (type pdf)
  <use pics/outline2.pdf>
-Package pdftex.def Info: pics/outline2.pdf used on input line 102.
+Package pdftex.def Info: pics/outline2.pdf used on input line 109.
 (pdftex.def)             Requested size: 247.6778pt x 98.64171pt.
 
 <pics/mesh_ctiff.jpg, id=11, 642.4pt x 642.4pt>
 File: pics/mesh_ctiff.jpg Graphic file (type jpg)
  <use pics/mesh_ctiff.jpg>
-Package pdftex.def Info: pics/mesh_ctiff.jpg used on input line 138.
+Package pdftex.def Info: pics/mesh_ctiff.jpg used on input line 145.
 (pdftex.def)             Requested size: 216.71906pt x 216.71733pt.
 
 [2 <./pics/outline.pdf> <./pics/outline2.pdf
@@ -400,57 +403,54 @@ fs with page group included in a single page
 File: pics/SpiNN5.pdf Graphic file (type pdf)
 
 <use pics/SpiNN5.pdf>
-Package pdftex.def Info: pics/SpiNN5.pdf used on input line 160.
+Package pdftex.def Info: pics/SpiNN5.pdf used on input line 167.
 (pdftex.def)             Requested size: 216.71906pt x 214.9002pt.
  <pics/conv.pdf, id=36, 351.3125pt x 135.50626pt>
 File: pics/conv.pdf Graphic file (type pdf)
 
 <use pics/conv.pdf>
-Package pdftex.def Info: pics/conv.pdf used on input line 179.
+Package pdftex.def Info: pics/conv.pdf used on input line 187.
 (pdftex.def)             Requested size: 216.71906pt x 83.59326pt.
  <pics/model1.pdf, id=37, 392.46625pt x 84.315pt>
 File: pics/model1.pdf Graphic file (type pdf)
 
 <use pics/model1.pdf>
-Package pdftex.def Info: pics/model1.pdf used on input line 192.
+Package pdftex.def Info: pics/model1.pdf used on input line 200.
 (pdftex.def)             Requested size: 247.6778pt x 53.21005pt.
  <pics/gesture.pdf, id=38, 498.86375pt x 100.375pt>
 File: pics/gesture.pdf Graphic file (type pdf)
 
 <use pics/gesture.pdf>
-Package pdftex.def Info: pics/gesture.pdf used on input line 211.
+Package pdftex.def Info: pics/gesture.pdf used on input line 219.
 (pdftex.def)             Requested size: 247.6778pt x 49.83356pt.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 21
-6.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 22
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 21
-6.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 22
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 21
-6.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 22
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 21
-6.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 22
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 216.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 224.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 216.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 224.
  [3 <./pics/SpiNN5.pdf> <./pics/conv.pdf
 
 pdfTeX warning: pdflatex (file ./pics/conv.pdf): PDF inclusion: multiple pdfs w
@@ -463,123 +463,133 @@ pdfTeX warning: pdflatex (file ./pics/model1.pdf): PDF inclusion: multiple pdfs
 File: pics/gabor.pdf Graphic file (type pdf)
 
 <use pics/gabor.pdf>
-Package pdftex.def Info: pics/gabor.pdf used on input line 243.
+Package pdftex.def Info: pics/gabor.pdf used on input line 251.
 (pdftex.def)             Requested size: 247.6778pt x 72.3393pt.
  <pics/model2.pdf, id=126, 463.7325pt x 84.315pt>
 File: pics/model2.pdf Graphic file (type pdf)
 
 <use pics/model2.pdf>
-Package pdftex.def Info: pics/model2.pdf used on input line 263.
+Package pdftex.def Info: pics/model2.pdf used on input line 271.
 (pdftex.def)             Requested size: 268.3222pt x 48.78693pt.
 
-Overfull \hbox (16.3222pt too wide) in paragraph at lines 263--267
+Overfull \hbox (16.3222pt too wide) in paragraph at lines 271--275
  [][] 
  []
 
 
-Overfull \hbox (6.45836pt too wide) in paragraph at lines 297--298
+Overfull \hbox (6.45836pt too wide) in paragraph at lines 305--306
  []|[]| 
  []
 
 
-Overfull \hbox (6.45836pt too wide) in paragraph at lines 299--300
+Overfull \hbox (6.45836pt too wide) in paragraph at lines 307--308
  []|[]| 
  []
 
 
-Overfull \hbox (1.7334pt too wide) in paragraph at lines 307--307
+Overfull \hbox (1.7334pt too wide) in paragraph at lines 315--315
  []|\OT1/ptm/m/n/8 112$\OMS/ztmcm/m/n/8 ^^B$\OT1/ptm/m/n/8 112$\OMS/ztmcm/m/n/8
  ^^B$\OT1/ptm/m/n/8 4| 
  []
 
 
-Overfull \hbox (5.12236pt too wide) in paragraph at lines 314--315
+Overfull \hbox (5.12236pt too wide) in paragraph at lines 322--323
 []|[]| 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 285--328
+Overfull \hbox (6.0pt too wide) in paragraph at lines 293--336
 []$[]$ 
  []
 
 
-Overfull \hbox (6.45836pt too wide) in paragraph at lines 341--342
+Overfull \hbox (6.45836pt too wide) in paragraph at lines 349--350
  []|[]| 
  []
 
 
-Overfull \hbox (6.45836pt too wide) in paragraph at lines 343--344
+Overfull \hbox (6.45836pt too wide) in paragraph at lines 351--352
  []|[]| 
  []
 
 
-Overfull \hbox (2.89056pt too wide) in paragraph at lines 351--351
+Overfull \hbox (2.89056pt too wide) in paragraph at lines 359--359
  []|\OT1/ptm/m/n/8 21$\OMS/ztmcm/m/n/8 ^^B$\OT1/ptm/m/n/8 21$\OMS/ztmcm/m/n/8 ^
 ^B$\OT1/ptm/m/n/8 10| 
  []
 
 
-Overfull \hbox (2.89056pt too wide) in paragraph at lines 351--352
+Overfull \hbox (2.89056pt too wide) in paragraph at lines 359--360
  []|\OT1/ptm/m/n/8 15$\OMS/ztmcm/m/n/8 ^^B$\OT1/ptm/m/n/8 15$\OMS/ztmcm/m/n/8 ^
 ^B$\OT1/ptm/m/n/8 10| 
  []
 
 
-Overfull \hbox (7.34636pt too wide) in paragraph at lines 354--355
+Overfull \hbox (7.34636pt too wide) in paragraph at lines 362--363
 []|[]| 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 329--365
+Overfull \hbox (6.0pt too wide) in paragraph at lines 337--373
 []$[]$
  []
 
 <pics/rateMatlab.pdf, id=127, 550.055pt x 369.38pt>
 File: pics/rateMatlab.pdf Graphic file (type pdf)
  <use pics/rateMatlab.pdf>
-Package pdftex.def Info: pics/rateMatlab.pdf used on input line 372.
+Package pdftex.def Info: pics/rateMatlab.pdf used on input line 380.
 (pdftex.def)             Requested size: 247.6778pt x 166.3209pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
 [4 <./pics/gabor.pdf> <./pics/model2.pdf>]
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 414--415
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 422--423
  []|[]| 
  []
 
 
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 415--416
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 423--424
  []|[]| 
  []
 
 
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 416--417
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 424--425
  []|[]| 
  []
 
 
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 417--418
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 425--426
  []|[]| 
  []
 
 
-Overfull \hbox (6.52515pt too wide) in paragraph at lines 426--427
+Overfull \hbox (4.98126pt too wide) in paragraph at lines 428--429
 []|[]| 
  []
 
 
-Overfull \hbox (4.98126pt too wide) in paragraph at lines 432--433
+Overfull \hbox (6.52515pt too wide) in paragraph at lines 434--435
 []|[]| 
  []
 
 
-Overfull \hbox (4.98126pt too wide) in paragraph at lines 438--439
+Overfull \hbox (4.98126pt too wide) in paragraph at lines 440--441
 []|[]| 
  []
 
 
-Overfull \hbox (4.98126pt too wide) in paragraph at lines 444--445
+Overfull \hbox (4.98126pt too wide) in paragraph at lines 446--447
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.98126pt too wide) in paragraph at lines 452--453
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.98126pt too wide) in paragraph at lines 457--458
 []|[]| 
  []
 
@@ -587,207 +597,206 @@ Overfull \hbox (4.98126pt too wide) in paragraph at lines 444--445
 File: pics/live1.png Graphic file (type png)
 
 <use pics/live1.png>
-Package pdftex.def Info: pics/live1.png used on input line 531.
+Package pdftex.def Info: pics/live1.png used on input line 544.
 (pdftex.def)             Requested size: 123.84283pt x 109.11943pt.
  <pics/live2.png, id=269, 530.98375pt x 469.755pt>
 File: pics/live2.png Graphic file (type png)
 
 <use pics/live2.png>
-Package pdftex.def Info: pics/live2.png used on input line 536.
+Package pdftex.def Info: pics/live2.png used on input line 549.
 (pdftex.def)             Requested size: 123.84283pt x 109.56096pt.
  <pics/live.png, id=270, 833.1125pt x 700.6175pt>
 File: pics/live.png Graphic file (type png)
 
 <use pics/live.png>
-Package pdftex.def Info: pics/live.png used on input line 542.
+Package pdftex.def Info: pics/live.png used on input line 555.
 (pdftex.def)             Requested size: 247.6778pt x 208.28395pt.
  <pics/rateSpiNN.pdf, id=271, 544.88266pt x 369.76244pt>
 File: pics/rateSpiNN.pdf Graphic file (type pdf)
 
 <use pics/rateSpiNN.pdf>
-Package pdftex.def Info: pics/rateSpiNN.pdf used on input line 562.
+Package pdftex.def Info: pics/rateSpiNN.pdf used on input line 575.
 (pdftex.def)             Requested size: 247.6778pt x 168.0729pt.
  <pics/figure_r.png, id=272, 586.8324pt x 442.2924pt>
 File: pics/figure_r.png Graphic file (type png)
 
 <use pics/figure_r.png>
-Package pdftex.def Info: pics/figure_r.png used on input line 587.
+Package pdftex.def Info: pics/figure_r.png used on input line 606.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
  <pics/figure_1.png, id=274, 586.8324pt x 442.2924pt>
 File: pics/figure_1.png Graphic file (type png)
 
 <use pics/figure_1.png>
-Package pdftex.def Info: pics/figure_1.png used on input line 592.
+Package pdftex.def Info: pics/figure_1.png used on input line 611.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
  <pics/figure_2.png, id=275, 586.8324pt x 442.2924pt>
 File: pics/figure_2.png Graphic file (type png)
 
 <use pics/figure_2.png>
-Package pdftex.def Info: pics/figure_2.png used on input line 598.
+Package pdftex.def Info: pics/figure_2.png used on input line 617.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
  <pics/figure_3.png, id=276, 586.8324pt x 442.2924pt>
 File: pics/figure_3.png Graphic file (type png)
 
 <use pics/figure_3.png>
-Package pdftex.def Info: pics/figure_3.png used on input line 603.
+Package pdftex.def Info: pics/figure_3.png used on input line 622.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
  <pics/figure_4.png, id=277, 586.8324pt x 442.2924pt>
 File: pics/figure_4.png Graphic file (type png)
 
 <use pics/figure_4.png>
-Package pdftex.def Info: pics/figure_4.png used on input line 608.
+Package pdftex.def Info: pics/figure_4.png used on input line 627.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
  <pics/figure_5.png, id=278, 586.8324pt x 442.2924pt>
 File: pics/figure_5.png Graphic file (type png)
 
 <use pics/figure_5.png>
-Package pdftex.def Info: pics/figure_5.png used on input line 613.
+Package pdftex.def Info: pics/figure_5.png used on input line 632.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
-
-<pics/figure_32_r.png, id=279, 586.8324pt x 442.2924pt>
+ [6 <./pics/live1.png (PNG copy)> <./pics/live2.png (PNG copy)> <./pics/live.pn
+g (PNG copy)>]
+<pics/figure_32_r.png, id=282, 586.8324pt x 442.2924pt>
 File: pics/figure_32_r.png Graphic file (type png)
 
 <use pics/figure_32_r.png>
-Package pdftex.def Info: pics/figure_32_r.png used on input line 623.
+Package pdftex.def Info: pics/figure_32_r.png used on input line 642.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
 
-<pics/figure_32_1.png, id=280, 586.8324pt x 442.2924pt>
+<pics/figure_32_1.png, id=283, 586.8324pt x 442.2924pt>
 File: pics/figure_32_1.png Graphic file (type png)
 
 <use pics/figure_32_1.png>
-Package pdftex.def Info: pics/figure_32_1.png used on input line 628.
+Package pdftex.def Info: pics/figure_32_1.png used on input line 647.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
 
-<pics/figure_32_2.png, id=281, 586.8324pt x 442.2924pt>
+<pics/figure_32_2.png, id=284, 586.8324pt x 442.2924pt>
 File: pics/figure_32_2.png Graphic file (type png)
 
 <use pics/figure_32_2.png>
-Package pdftex.def Info: pics/figure_32_2.png used on input line 634.
+Package pdftex.def Info: pics/figure_32_2.png used on input line 653.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
 
-<pics/figure_32_3.png, id=282, 586.8324pt x 442.2924pt>
+<pics/figure_32_3.png, id=285, 586.8324pt x 442.2924pt>
 File: pics/figure_32_3.png Graphic file (type png)
 
 <use pics/figure_32_3.png>
-Package pdftex.def Info: pics/figure_32_3.png used on input line 639.
+Package pdftex.def Info: pics/figure_32_3.png used on input line 658.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
 
-<pics/figure_32_4.png, id=283, 586.8324pt x 442.2924pt>
+<pics/figure_32_4.png, id=286, 586.8324pt x 442.2924pt>
 File: pics/figure_32_4.png Graphic file (type png)
 
 <use pics/figure_32_4.png>
-Package pdftex.def Info: pics/figure_32_4.png used on input line 644.
+Package pdftex.def Info: pics/figure_32_4.png used on input line 663.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
 
-<pics/figure_32_5.png, id=284, 586.8324pt x 442.2924pt>
+<pics/figure_32_5.png, id=287, 586.8324pt x 442.2924pt>
 File: pics/figure_32_5.png Graphic file (type png)
 
 <use pics/figure_32_5.png>
-Package pdftex.def Info: pics/figure_32_5.png used on input line 649.
+Package pdftex.def Info: pics/figure_32_5.png used on input line 668.
 (pdftex.def)             Requested size: 123.84283pt x 93.3363pt.
 
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 666--667
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 685--686
  []|[]| 
  []
 
 
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 667--668
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 686--687
  []|[]| 
  []
 
 
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 668--669
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 687--688
  []|[]| 
  []
 
 
-Overfull \hbox (6.29536pt too wide) in paragraph at lines 669--670
+Overfull \hbox (6.29536pt too wide) in paragraph at lines 688--689
  []|[]| 
  []
 
 
-Overfull \hbox (6.52515pt too wide) in paragraph at lines 678--679
+Overfull \hbox (6.52515pt too wide) in paragraph at lines 697--698
 []|[]| 
  []
 
 
-Overfull \hbox (4.89319pt too wide) in paragraph at lines 684--685
+Overfull \hbox (4.89319pt too wide) in paragraph at lines 703--704
 []|[]| 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./pics/live1.png (PNG copy)> <./pics/live2.png (PNG copy)> <./pics/live.pn
-g (PNG copy)>] (./icann2015.bbl [7 <./pics/rateSpiNN.pdf> <./pics/figure_r.png>
- <./pics/figure_1.png> <./pics/figure_2.png> <./pics/figure_3.png> <./pics/figu
-re_4.png> <./pics/figure_5.png> <./pics/figure_32_r.png> <./pics/figure_32_1.pn
-g> <./pics/figure_32_2.png> <./pics/figure_32_3.png> <./pics/figure_32_4.png> <
-./pics/figure_32_5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 152--156
+(./icann2015.bbl [7 <./pics/rateSpiNN.pdf> <./pics/figure_r.png> <./pics/figure
+_1.png> <./pics/figure_2.png> <./pics/figure_3.png> <./pics/figure_4.png> <./pi
+cs/figure_5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 164--168
 \OT1/ptm/m/n/8 in real-time.'' $https : / / www . youtube . com / watch ? v = P
 vJy6RKAJhw &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--156
+Underfull \hbox (badness 10000) in paragraph at lines 164--168
 \OT1/ptm/m/n/8 feature = youtu . be & list = PLxZ1W-[]Upr3eoQuLxq87qpUL-[]CwSph
 tEBJ$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--166
+Underfull \hbox (badness 10000) in paragraph at lines 175--178
 \OT1/ptm/m/n/8 be / yxN90aGGKvg ? list = PLxZ1W-[]Upr3eoQuLxq87qpUL-[]CwSphtEBJ
 $,
  []
 
-) <pics/liuq.jpg, id=321, 1076.02pt x 1234.6125pt>
+) [8 <./pics/figure_32_r.png> <./pics/figure_32_1.png> <./pics/figure_32_2.png>
+ <./pics/figure_32_3.png> <./pics/figure_32_4.png> <./pics/figure_32_5.png>]
+<pics/liuq.jpg, id=324, 1076.02pt x 1234.6125pt>
 File: pics/liuq.jpg Graphic file (type jpg)
  <use pics/liuq.jpg>
-Package pdftex.def Info: pics/liuq.jpg used on input line 719.
+Package pdftex.def Info: pics/liuq.jpg used on input line 746.
 (pdftex.def)             Requested size: 72.25879pt x 82.90887pt.
 File: pics/liuq.jpg Graphic file (type jpg)
 
 <use pics/liuq.jpg>
-Package pdftex.def Info: pics/liuq.jpg used on input line 719.
+Package pdftex.def Info: pics/liuq.jpg used on input line 746.
 (pdftex.def)             Requested size: 72.25879pt x 82.90887pt.
 
-** ATTENTION: \biography is deprecated (line 724). Use \IEEEbiography instead.
-<pics/sf.jpg, id=324, 169.63374pt x 191.71625pt>
+** ATTENTION: \biography is deprecated (line 751). Use \IEEEbiography instead.
+<pics/sf.jpg, id=327, 169.63374pt x 191.71625pt>
 File: pics/sf.jpg Graphic file (type jpg)
  <use pics/sf.jpg>
-Package pdftex.def Info: pics/sf.jpg used on input line 724.
+Package pdftex.def Info: pics/sf.jpg used on input line 751.
 (pdftex.def)             Requested size: 72.2681pt x 81.67578pt.
 File: pics/sf.jpg Graphic file (type jpg)
 
 <use pics/sf.jpg>
-Package pdftex.def Info: pics/sf.jpg used on input line 724.
+Package pdftex.def Info: pics/sf.jpg used on input line 751.
 (pdftex.def)             Requested size: 72.2681pt x 81.67578pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [8 <./pics/liuq.jpg> <./pics/sf.jpg>] (./icann2015.aux) ) 
+ [9
+
+ <./pics/liuq.jpg> <./pics/sf.jpg>] (./icann2015.aux) ) 
 Here is how much of TeX's memory you used:
- 4530 strings out of 495028
- 70677 string characters out of 6181497
- 139171 words of memory out of 5000000
- 7620 multiletter control sequences out of 15000+600000
+ 4532 strings out of 495028
+ 70695 string characters out of 6181497
+ 138179 words of memory out of 5000000
+ 7622 multiletter control sequences out of 15000+600000
  62070 words of font info for 120 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
  42i,18n,40p,652b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/t
-exmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on icann2015.pdf (8 pages, 5532188 bytes).
+{/usr/share/texlive/texm
+f-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on icann2015.pdf (9 pages, 5535213 bytes).
 PDF statistics:
- 360 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 363 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
