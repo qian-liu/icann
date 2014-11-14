@@ -13,21 +13,15 @@
 \citation{gupta2007character}
 \citation{6467270}
 \citation{camunas2012event}
-\citation{delorme2001networks}
+\citation{rehn2007network}
 \citation{o2013real}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
 \citation{delbruck2008frame}
 \citation{6252490}
 \citation{galluppi2012real}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}The Neuromorphic Platform}{1}}
-\newlabel{sec:np}{{II}{1}}
 \citation{lazzaro1995multi}
 \citation{lenero20113}
 \citation{appnote8}
-\citation{davison2008pynn}
-\citation{galluppi2012real}
-\citation{5537164}
-\citation{6706931}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:SysOverViewa}{{1a}{2}}
 \newlabel{sub@fig:SysOverViewa}{{a}{2}}
@@ -35,108 +29,86 @@
 \newlabel{sub@fig:SysOverViewb}{{b}{2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System overview of the dynamic hand posture recognition platform. \relax }}{2}}
 \newlabel{fig:SysOverView}{{1}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}The Neuromorphic Platform}{2}}
+\newlabel{sec:np}{{II}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-A}}Silicon Retina}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}SpiNNaker System}{2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SpiNNaker system diagram. Each element represents one chip with local memory. Every chip connects to its neighbours through the six bi-directional on-board links. \relax }}{2}}
 \newlabel{fig:sysdia}{{2}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-B}}SpiNNaker System}{2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {II-C}}Interfacing AER Sensors}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces `103 Machine' PCB\relax }}{3}}
-\newlabel{fig:48node}{{3}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Each individual neuron in the convolution layer (right matrix) connects to its receptive field using the same kernel. The value of the kernel is represented by the synaptic weights between the connected neurons.\relax }}{3}}
-\newlabel{fig:conv}{{4}{3}}
+\citation{davison2008pynn}
+\citation{galluppi2012real}
+\citation{5537164}
+\citation{6706931}
+\citation{lecun1998gradient}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Each individual neuron in the convolution layer (right matrix) connects to its receptive field using the same kernel. The value of the kernel is represented by the synaptic weights between the connected neurons.\relax }}{3}}
+\newlabel{fig:conv}{{3}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Model 1. The retina input is convolved with Gabor filters in the second layer, and then shrinks the sizes in the pooling layer. The templates are considered as convolution kernels in the last layer. The WTA circuit can be used as an option to show the template matching result more clearly. \relax }}{3}}
+\newlabel{fig:model1}{{4}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}Convolutional Neural Networks}{3}}
 \newlabel{sec:cnn}{{III}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-A}}Model Description}{3}}
 \newlabel{sec:mds}{{\unhbox \voidb@x \hbox {III-A}}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Model 1. The retina input is convolved with Gabor filters in the second layer, and then shrinks the sizes in the pooling layer. The templates are considered as convolution kernels in the last layer. The WTA circuit can be used as an option to show the template matching result more clearly. \relax }}{3}}
-\newlabel{fig:model1}{{5}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Templates of the five postures: `Fist',`Index Finger', `Victory Sign', `Full Hand' and `Thumb up'.\relax }}{3}}
-\newlabel{fig:template}{{6}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Templates of the five postures: `Fist',`Index Finger', `Victory Sign', `Full Hand' and `Thumb up'.\relax }}{3}}
+\newlabel{fig:template}{{5}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Real parts of the Gabor filters orienting four directions.\relax }}{3}}
+\newlabel{fig:gabor}{{6}{3}}
 \newlabel{equ:gabor}{{1}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Real parts of the Gabor filters orienting four directions.\relax }}{3}}
-\newlabel{fig:gabor}{{7}{3}}
-\citation{lecun1998gradient}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Model 2. The retina input convolves with Gabor filters in the second layer, and then shrinks the sizes in the pooling layer. The following tracking layer finds the most active area of some fixed size, moves the posture to the centre and pushes the image to the trained MLP. The winner-take-all (WTA) layer can be used as an option to show the template matching result more clearly.\relax }}{4}}
-\newlabel{fig:model2}{{8}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Experimental Set-up}{4}}
-\newlabel{sec:tat}{{\unhbox \voidb@x \hbox {III-B}}{4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Experimental Results}{4}}
-\newlabel{sec:exp}{{\unhbox \voidb@x \hbox {III-C}}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Model 2. The retina input convolves with Gabor filters in the second layer, and then shrinks the sizes in the pooling layer. The following tracking layer finds the most active area of some fixed size, moves the posture to the centre and pushes the image to the trained MLP. The winner-take-all (WTA) layer can be used as an option to show the template matching result more clearly.\relax }}{4}}
+\newlabel{fig:model2}{{7}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Sizes of the convolutional neural networks.\relax }}{4}}
 \newlabel{tbl:m1}{{Ia}{4}}
 \newlabel{sub@tbl:m1}{{a}{4}}
 \newlabel{tbl:m2}{{Ib}{4}}
 \newlabel{sub@tbl:m2}{{b}{4}}
 \newlabel{tbl:nns}{{I}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Neural responses with time of four experiments to the same recorded moving postures. The recognition output is normalised to \unhbox \voidb@x \hbox {[-1, 1]}. Every point represents the highest response in a specific population (different colour) for a 30\nobreakspace  {}ms frame. The 1st plot refers to Model 1 with the full input resolution, and the 2nd plot Model 1 with the sub-sampled input resolution; and the 3rd and fourth plots both refer to Model 2, and with high and low input resolution respectively. \relax }}{4}}
-\newlabel{fig:matlabrec}{{9}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}Experimental Set-up}{4}}
+\newlabel{sec:tat}{{\unhbox \voidb@x \hbox {III-B}}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Neural responses with time of four experiments to the same recorded moving postures. The recognition output is normalised to \unhbox \voidb@x \hbox {[-1, 1]}. Every point represents the highest response in a specific population (different colour) for a 30\nobreakspace  {}ms frame. The 1st plot refers to Model 1 with the full input resolution, and the 2nd plot Model 1 with the sub-sampled input resolution; and the 3rd and fourth plots both refer to Model 2, and with high and low input resolution respectively. \relax }}{4}}
+\newlabel{fig:matlabrec}{{8}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Experimental Results}{4}}
+\newlabel{sec:exp}{{\unhbox \voidb@x \hbox {III-C}}{4}}
 \citation{la2008response}
 \citation{burkitt2006review}
 \citation{siegert1951first}
 \citation{video1}
 \citation{video2}
 \citation{video3}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Recognition results in \%\relax }}{5}}
+\citation{video1}
+\citation{video1}
+\citation{video2}
+\citation{video2}
+\citation{video3}
+\citation{video3}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Recognition results using linear perceptrons in \%\relax }}{5}}
 \newlabel{tbl:rsl}{{II}{5}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Real-Time Recognition on SpiNNaker}{5}}
 \newlabel{sec:rrs}{{IV}{5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Moving from Rate-based Artificial Neurons to Spiking Neurons}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Moving from Rate-based Perceptrons to Spiking Neurons}{5}}
 \newlabel{equ:lif}{{2}{5}}
 \newlabel{equ:consI}{{3}{5}}
 \newlabel{equ:sde}{{4}{5}}
 \newlabel{equ:ou}{{5}{5}}
 \newlabel{equ:sgt}{{6}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Live Recognition}{5}}
-\citation{video1}
-\citation{video1}
-\citation{video2}
-\citation{video2}
-\citation{video3}
-\citation{video3}
-\newlabel{fig:live1}{{10a}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Recognition of Recorded Data}{5}}
+\newlabel{fig:live1}{{9a}{6}}
 \newlabel{sub@fig:live1}{{a}{6}}
-\newlabel{fig:live2}{{10b}{6}}
+\newlabel{fig:live2}{{9b}{6}}
 \newlabel{sub@fig:live2}{{b}{6}}
-\newlabel{fig:live3}{{10c}{6}}
+\newlabel{fig:live3}{{9c}{6}}
 \newlabel{sub@fig:live3}{{c}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Snapshots of the real-time dynamic posture recognition system on SpiNNaker. \relax }}{6}}
-\newlabel{fig:live}{{10}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-C}}Recognition of Recorded Data}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Real-time neural responses of two experiments on SpiNNaker with time to the same recorded postures. These two experiments only differ in input resolution. The result of the high input resolution test is plotted the first with a sample frame of 30\nobreakspace  {}ms; while the 3rd plot shows the same result with a sample frame of 300\nobreakspace  {}ms. The other two plots refer to the smaller input resolution. Every point represents the over all number of spikes of a specific population (different colour) in a `frame'. \relax }}{6}}
-\newlabel{fig:spikerec}{{11}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Snapshots of the real-time dynamic posture recognition system on SpiNNaker. \relax }}{6}}
+\newlabel{fig:live}{{9}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Real-time neural responses of two experiments on SpiNNaker with time to the same recorded postures. These two experiments only differ in input resolution. The result of the high input resolution test is plotted the first with a sample frame of 30\nobreakspace  {}ms; while the 3rd plot shows the same result with a sample frame of 300\nobreakspace  {}ms. The other two plots refer to the smaller input resolution. Every point represents the over all number of spikes of a specific population (different colour) in a `frame'. \relax }}{6}}
+\newlabel{fig:spikerec}{{10}{6}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Real-time recognition results on SpiNNaker in \%\relax }}{6}}
+\newlabel{tbl:srr}{{III}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion and Future Work}{6}}
+\newlabel{sec:cfw}{{V}{6}}
 \citation{elmezain2009hidden}
 \bibdata{refs}
 \bibcite{wysoski2008fast}{1}
-\newlabel{fig:ssa}{{12a}{7}}
-\newlabel{sub@fig:ssa}{{a}{7}}
-\newlabel{fig:rec0}{{12b}{7}}
-\newlabel{sub@fig:rec0}{{b}{7}}
-\newlabel{fig:rec1}{{12c}{7}}
-\newlabel{sub@fig:rec1}{{c}{7}}
-\newlabel{fig:rec5}{{12e}{7}}
-\newlabel{sub@fig:rec5}{{e}{7}}
-\newlabel{fig:rect}{{12f}{7}}
-\newlabel{sub@fig:rect}{{f}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Spikes captured during the live recognition of the recorded retinal input with the resolution of 128$\times $128. \relax }}{7}}
-\newlabel{fig:rps}{{12}{7}}
-\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Real-time recognition results on SpiNNaker in \%\relax }}{7}}
-\newlabel{tbl:srr}{{III}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusion and Future Work}{7}}
-\newlabel{sec:cfw}{{V}{7}}
-\newlabel{fig:ssa32}{{13a}{7}}
-\newlabel{sub@fig:ssa32}{{a}{7}}
-\newlabel{fig:rec032}{{13b}{7}}
-\newlabel{sub@fig:rec032}{{b}{7}}
-\newlabel{fig:rec132}{{13c}{7}}
-\newlabel{sub@fig:rec132}{{c}{7}}
-\newlabel{fig:rec532}{{13e}{7}}
-\newlabel{sub@fig:rec532}{{e}{7}}
-\newlabel{fig:rect32}{{13f}{7}}
-\newlabel{sub@fig:rect32}{{f}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Spikes captured during the live recognition of the recorded retinal input with the resolution of 32$\times $32. \relax }}{7}}
-\newlabel{fig:rps32}{{13}{7}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Acknowledgement}{7}}
-\newlabel{sec:ack}{{VI}{7}}
 \bibcite{canny1986computational}{2}
 \bibcite{toygar2004multiple}{3}
 \bibcite{wei2006robust}{4}
@@ -144,13 +116,40 @@
 \bibcite{bay2008speeded}{6}
 \bibcite{riesenhuber1999hierarchical}{7}
 \bibcite{lenero20113}{8}
+\newlabel{fig:ssa}{{11a}{7}}
+\newlabel{sub@fig:ssa}{{a}{7}}
+\newlabel{fig:rec0}{{11b}{7}}
+\newlabel{sub@fig:rec0}{{b}{7}}
+\newlabel{fig:rec1}{{11c}{7}}
+\newlabel{sub@fig:rec1}{{c}{7}}
+\newlabel{fig:rec5}{{11e}{7}}
+\newlabel{sub@fig:rec5}{{e}{7}}
+\newlabel{fig:rect}{{11f}{7}}
+\newlabel{sub@fig:rect}{{f}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Spikes captured during the live recognition of the recorded retinal input with the resolution of 128$\times $128. \relax }}{7}}
+\newlabel{fig:rps}{{11}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Acknowledgement}{7}}
+\newlabel{sec:ack}{{VI}{7}}
+\newlabel{fig:ssa32}{{12a}{7}}
+\newlabel{sub@fig:ssa32}{{a}{7}}
+\newlabel{fig:rec032}{{12b}{7}}
+\newlabel{sub@fig:rec032}{{b}{7}}
+\newlabel{fig:rec132}{{12c}{7}}
+\newlabel{sub@fig:rec132}{{c}{7}}
+\newlabel{fig:rec532}{{12e}{7}}
+\newlabel{sub@fig:rec532}{{e}{7}}
+\newlabel{fig:rect32}{{12f}{7}}
+\newlabel{sub@fig:rect32}{{f}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Spikes captured during the live recognition of the recorded retinal input with the resolution of 32$\times $32. \relax }}{7}}
+\newlabel{fig:rps32}{{12}{7}}
+\@writefile{toc}{\contentsline {section}{References}{7}}
 \bibcite{furber2014spinnaker}{9}
 \bibcite{hopfield1995pattern}{10}
 \bibcite{natschlager1998spatial}{11}
 \bibcite{gupta2007character}{12}
 \bibcite{6467270}{13}
 \bibcite{camunas2012event}{14}
-\bibcite{delorme2001networks}{15}
+\bibcite{rehn2007network}{15}
 \bibcite{o2013real}{16}
 \bibcite{delbruck2008frame}{17}
 \bibcite{6252490}{18}
@@ -169,7 +168,6 @@
 \bibcite{video3}{31}
 \bibcite{elmezain2009hidden}{32}
 \bibstyle{ieeetr}
-\@writefile{toc}{\contentsline {section}{References}{8}}
 \@writefile{toc}{\contentsline {section}{Biographies}{8}}
 \@writefile{toc}{\contentsline {subsection}{Qian Liu}{8}}
 \@writefile{toc}{\contentsline {subsection}{Steve Furber}{8}}

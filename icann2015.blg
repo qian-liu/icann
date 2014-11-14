@@ -4,25 +4,25 @@ The top-level auxiliary file: icann2015.aux
 The style file: ieeetr.bst
 Database file #1: refs.bib
 Warning--entry type for "video1" isn't style-file defined
---line 296 of file refs.bib
+--line 306 of file refs.bib
 Warning--entry type for "video2" isn't style-file defined
---line 305 of file refs.bib
+--line 315 of file refs.bib
 Warning--entry type for "video3" isn't style-file defined
---line 314 of file refs.bib
-Warning--entry type for "appnote8" isn't style-file defined
 --line 324 of file refs.bib
+Warning--entry type for "appnote8" isn't style-file defined
+--line 334 of file refs.bib
 Warning--empty journal in furber2014spinnaker
 You've used 32 entries,
             1876 wiz_defined-function locations,
-            672 strings with 9706 characters,
-and the built_in function-call counts, 9662 in all, are:
-= -- 976
-> -- 345
+            672 strings with 9691 characters,
+and the built_in function-call counts, 9654 in all, are:
+= -- 977
+> -- 342
 < -- 0
-+ -- 129
-- -- 97
-* -- 693
-:= -- 1314
++ -- 128
+- -- 96
+* -- 692
+:= -- 1312
 add.period$ -- 32
 call.type$ -- 32
 change.case$ -- 32
@@ -30,18 +30,18 @@ chr.to.int$ -- 0
 cite$ -- 33
 duplicate$ -- 494
 empty$ -- 917
-format.name$ -- 97
-if$ -- 2374
+format.name$ -- 96
+if$ -- 2373
 int.to.chr$ -- 0
 int.to.str$ -- 32
 missing$ -- 28
 newline$ -- 99
 num.names$ -- 32
-pop$ -- 109
+pop$ -- 108
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 372
+skip$ -- 373
 stack$ -- 0
 substring$ -- 748
 swap$ -- 221
@@ -52,5 +52,5 @@ type$ -- 0
 warning$ -- 1
 while$ -- 101
 width$ -- 34
-write$ -- 319
+write$ -- 320
 (There were 5 warnings)

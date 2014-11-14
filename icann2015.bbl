@@ -71,11 +71,10 @@ L.~Camunas-Mesa, C.~Zamarreno-Ramos, A.~Linares-Barranco, A.~J. Acosta-Jimenez,
   {\em Solid-State Circuits, IEEE Journal of}, vol.~47, no.~2, pp.~504--517,
   2012.
 
-\bibitem{delorme2001networks}
-A.~Delorme, L.~Perrinet, and S.~J. Thorpe, ``Networks of integrate-and-fire
-  neurons using rank order coding b: spike timing dependent plasticity and
-  emergence of orientation selectivity,'' {\em Neurocomputing}, vol.~38,
-  pp.~539--545, 2001.
+\bibitem{rehn2007network}
+M.~Rehn and F.~T. Sommer, ``A network that uses few active neurones to code
+  visual input predicts the diverse shapes of cortical receptive fields,'' {\em
+  Journal of computational neuroscience}, vol.~22, no.~2, pp.~135--146, 2007.
 
 \bibitem{o2013real}
 P.~O'Connor, D.~Neil, S.-C. Liu, T.~Delbruck, and M.~Pfeiffer, ``Real-time
